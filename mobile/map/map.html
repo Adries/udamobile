@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Géolocation</title>
+		<meta name="viewport" content="user-scalable=no, width=device-width, height=device-height, initial-scale=1, minimum-scale=1,  maximum-scale=1"/> 
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="../common/css/themes/blanc.min.css" />
+		<link rel="stylesheet" href="../common/css/jquery.mobile.structure-1.3.1.min.css" /> 
+		<script src="../common/js/jquery-1.9.1.min.js"> </script>
+		<script src="js/initialize.js"> </script>
+		<script src="js/getLocation.js"> </script>
+		<script src="js/search_er.js"> </script>
+		<script type="text/javascript">
+			$(document).bind('mobileinit', function(){
+				$.mobile.page.prototype.options.addBackBtn = true;
+				$.mobile.allowCrossDomainPages = true;
+			});
+		</script>
+		<script src="../common/js/jquery.mobile-1.3.0.js"> </script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true&amp;libraries=places"> </script>
+		<!-- <script src="https://developers.google.com/places/documentation/autocomplete"></script>  -->
+		<!-- <script src="http://stackoverflow.com/questions/9469134/how-to-extract-latitude-and-longitude-from-google-maps-autocomplete"></script> -->
+		
+		
+	</head>
+	<body onload="initialize()">
+		<div id="uda_header" data-role="header" data-position="fixed">
+			<div data-role="navbar"  >
+				<ul>
+					<li><a data-role="button" ontouchstart="window.location='../main.html';" data-transition="reverse" data-ajax="false"><img src="../icons/home.png" ></a>  </li>
+					<li><a data-role="button"  onclick="window.location='listemap.html';" data-transition="slide" data-shadow="true"  data-ajax="false" ><img src="../icons/iconPoi.png" ></a>   </li>
+					<li><a data-role="button" onclick="getLocation()"data-transition="slide" data-ajax="false"> <img src="../icons/findme.png" /></a>	</li>
+				</ul>
+			</div>
+		</div>	
+
+		<div id="mainPage">
+			<table>
+				<tr>
+					<td>
+						<input id="searchTextField" type="text" size="49">
+					</td>
+					<td>
+						<a data-role="button" onclick="search_er()"data-transition="slide" ><img src="../icons/2search-icon.png"/></a> 
+					</td>
+				</tr>
+			</table>
+		
+		 <div id="Loading" > 
+		 	<img src="../icons/loading.gif" height="100%" width="100%"/>
+		 </div> 
+		<div id="mapholder">
+		</div>
+		</div>
+	</body>
+</html>
+
