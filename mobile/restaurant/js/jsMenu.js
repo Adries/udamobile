@@ -107,7 +107,12 @@ function btnhide(){
 //fonction qui met en place la liste des resto
 function makeList(json) {
 	
+	alert('RESTO AJAX 1.1');
+	
 	jsonResto = jQuery.isPlainObject(json) ? json: jQuery.parseJSON(json);
+	
+	alert('RESTO AJAX 1.2');
+	
 	if(jsonResto.code_retour == "ok") {
 		nbelt=jsonResto.count;
 		if( nbelt > 0 ) {		
