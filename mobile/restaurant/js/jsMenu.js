@@ -135,8 +135,10 @@ function initMenuAlpha() {
 		url:"http://udamobile.u-clermont1.fr/v2/restaurant/",
 		type: "GET",
 		success: function(feedback) {
+			alert('RESTO AJAX 1');
 			//var jsonResto = $.parseJSON(feedback);
 			makeList(feedback);
+			alert('RESTO AJAX 2');
 		},
 	});
 }
