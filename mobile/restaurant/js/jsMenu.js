@@ -140,7 +140,7 @@ function initMenuAlpha() {
 		url:"http://udamobile.u-clermont1.fr/v2/restaurant/",
 		type: "GET",
 		success: function(jsonResto) {
-			alert('RESTO AJAX 1 : ' + jsonResto.code_retour);
+			alert('RESTO AJAX 1 :  ' + jsonResto.code_retour);
 			if(jsonResto.code_retour == "ok") {
 				nbelt=jsonResto.count;
 				if( nbelt > 0 ) {		
