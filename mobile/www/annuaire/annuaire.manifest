@@ -1,12 +1,12 @@
 CACHE MANIFEST
 
 CACHE:
-css/mail_green.png
-css/phone.png
-annuaire.html
+/css/mail_green.png
+/css/phone.png
+/annuaire.html
  
 FALLBACK:
-offline.html
+/offline.html
  
 NETWORK:
 *
