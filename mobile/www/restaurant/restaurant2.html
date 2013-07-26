@@ -1,4 +1,4 @@
-<html>
+<html manifest="restaurant">
 		<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
@@ -13,60 +13,64 @@
 					$.mobile.allowCrossDomainPages = true;
 					$.mobile.defaultPageTransition = "slide";
 				});
-			</script>
-			<script src="../common/js/jquery.mobile-1.3.0.min.js"></script>
-			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true&amp;libraries=places"> </script>	
-			<script type="text/javascript" src="js/jsMenu2.min.js"></script>
-			<style>
-				.adp-directions {
-		  			  border-collapse: collapse;
-		  			  color: #FFFFFF;
-		  			  cursor: pointer;
-				}
-				.adp-placemark {
-					height: 10% !important;
-				}
-				#mapholder {
-					color: #000 !important;
-					padding-bottom:	20%;;
-					margin-top:1px;
-					margin-right:8%;
-					width:99%;
-					height:30%;
-					overflow:hidden;
-					display:block;
-					margin-top: 0em;
-				}
-				#addressText{
-					margin-right:5%;
-					width:99%;
-					height:40%;
-					display:inline-block;
-				}
-				.adp-step, .adp-substep{
-					background-color:#000;
-					text-color: #fafafa;
-				}
-				#page_menu {
-					color: #fafafa !important;
-				}
-				.contents{
-					width:100%;
-					display: block;
-				}
-				.ui-li li{
-					border: 2px solid #525252;
-					background-color: transparent;
-					color:#fff;
-					border-radius: 0.6em 0.6em 0.6em 0.6em;
-				}
-				#Rname{
-					background: url(./css/blackboard.jpg);
-					background-repeat: no-repeat;
-					background-position: center;
-					width:100%;
-				}
-			</style>
+			$(document).ready({
+				window.applicationCache.update();
+				alert(window.applicationCache.status);	
+			});
+		</script>
+		<script src="../common/js/jquery.mobile-1.3.0.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true&amp;libraries=places"> </script>	
+		<script type="text/javascript" src="js/jsMenu2.min.js"></script>
+		<style>
+			.adp-directions {
+	  			  border-collapse: collapse;
+	  			  color: #FFFFFF;
+	  			  cursor: pointer;
+			}
+			.adp-placemark {
+				height: 10% !important;
+			}
+			#mapholder {
+				color: #000 !important;
+				padding-bottom:	20%;;
+				margin-top:1px;
+				margin-right:8%;
+				width:99%;
+				height:30%;
+				overflow:hidden;
+				display:block;
+				margin-top: 0em;
+			}
+			#addressText{
+				margin-right:5%;
+				width:99%;
+				height:40%;
+				display:inline-block;
+			}
+			.adp-step, .adp-substep{
+				background-color:#000;
+				text-color: #fafafa;
+			}
+			#page_menu {
+				color: #fafafa !important;
+			}
+			.contents{
+				width:100%;
+				display: block;
+			}
+			.ui-li li{
+				border: 2px solid #525252;
+				background-color: transparent;
+				color:#fff;
+				border-radius: 0.6em 0.6em 0.6em 0.6em;
+			}
+			#Rname{
+				background: url(./css/blackboard.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				width:100%;
+			}
+		</style>
 	</head>	
 	<body onload="btnhide()">
 		<div id="mainPage" data-role="page" data-theme="a">
