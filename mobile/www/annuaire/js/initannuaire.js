@@ -1,7 +1,3 @@
-var appCache = window.applicationCache;
-
-alert(appCache.status);
-
 function initannuaire()
 {
 	var name = $("#name").val();

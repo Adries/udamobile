@@ -11,9 +11,13 @@
 				$.mobile.page.prototype.options.domCache = true;
 				$.mobile.allowCrossDomainPages = true;
 			});		
+
+			$(document).ready({
+				alert(window.applicationCache.status);	
+			});
 		</script>
 		<script src="../common/js/jquery.mobile-1.3.0.min.js"></script>
-		<script src="js/initannuaire.js"></script>
+		<script src="js/initannuaire.min.js"></script>
 	</head>
 	<body>
 		<div id="mainPage" data-role="page" data-theme="a">
