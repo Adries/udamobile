@@ -4,7 +4,4 @@ CACHE:
 /restaurant2.html
  
 FALLBACK:
-/offline.html
- 
-NETWORK:
-*
+*.html /offline.html
