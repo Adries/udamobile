@@ -1,6 +1,9 @@
 var nbelt, i, html="", jsonResto, lat, lon, mapOptions, requeteItineraire, directionsService = new google.maps.DirectionsService(), map, address, end, Radresse, Rcode_postal; 
 var Rdescription, nomResto, day = new Array(), today = new Date(), m, numero=today.getDate(), jour, month;
 
+window.applicationCache.update();
+alert(window.applicationCache.status);	
+
 function init_itineraire(lat,lan) {
 	end = new google.maps.LatLng(lat,lan);
 	getLocation();
@@ -226,13 +229,14 @@ $(document).on('swiperight','#btnlast', function() {
 	menu(m);
 });
 
-$(window).on('load', function(e) {
+window.addEventListener('load', function(e) {
 	alert('ICI');
-	$(window).applicationCache.addEventListener('updateready', function(e) {
-	if ($(window).applicationCache.status == window.applicationCache.UPDATEREADY) {
-		$(window).applicationCache.swapCache();
+	window.applicationCache.addEventListener('updateready', function(e) {
+	if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+		window.applicationCache.swapCache();
 		if (confirm('A new version of this site is available. Load it?')) {
-			$(window).location.reload();
+			window.location.reload();
 		}
 	}}, false);
+	alert(window.applicationCache.status);	
 }, false);
