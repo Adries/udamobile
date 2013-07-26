@@ -1,6 +1,6 @@
 var appCache = window.applicationCache;
 
-alert(appCache);
+alert(appCache.status);
 
 function initannuaire()
 {
