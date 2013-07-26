@@ -4,6 +4,7 @@ var Rdescription, nomResto, day = new Array(), today = new Date(), m, numero=tod
 var appCache = window.applicationCache;
 
 appCache.update();
+alert('LA + ' + appCache.status);
 if (appCache.status == window.applicationCache.UPDATEREADY) {
 	appCache.swapCache();
 }
@@ -234,9 +235,10 @@ $(document).on('swiperight','#btnlast', function() {
 });
 
 window.addEventListener('load', function(e) {
-	window.applicationCache.addEventListener('updateready', function(e) {
-		if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-			window.applicationCache.swapCache();
+	alert('ICI + ' + appCache.status);
+	appCache.addEventListener('updateready', function(e) {
+		if (appCache.status == window.applicationCache.UPDATEREADY) {
+			appCache.swapCache();
 			if (confirm('A new version of this site is available. Load it?')) {
 				window.location.reload();
 			}
