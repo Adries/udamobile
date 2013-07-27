@@ -1,20 +1,109 @@
-/*
-* jQuery Mobile 1.3.1
-* Git HEAD hash: 74b4bec049fd93e4fe40205e6157de16eb64eb46 <> Date: Mon Apr 8 2013 19:41:28 UTC
-* http://jquerymobile.com
-*
-* Copyright 2010, 2013 jQuery Foundation, Inc. and other contributors
-* Released under the MIT license.
-* http://jquery.org/license
-*
-*/
-
-.ui-bar-a {
-	border: none;
-	background: none;
-	color: #fafafa;
-	font-weight: bold;
+/* COMMON */
+html, body {
+	height: 100% !important;
+	width: 100% !important;
+	background: url('images/background_home.png') repeat center center !important;
+	font-family: Shanti !important;
+	margin: 0em !important;
+	padding: 0em !important;
 }
+body.loading .Loading {
+	display: block !important;
+}
+#mainPage {
+	margin: 0em !important;
+	padding: 0em !important;
+}
+#uda_header  {
+	margin: 0em !important;
+	padding: 0em !important;
+	text-align: center !important;
+}
+#uda_header img {
+	margin: 0em !important;
+	padding: 0em !important;
+}
+.ui-bar-a {
+	border: none !important;
+	background: none !important;
+	color: #FAFAFA !important;
+	font-weight: bold !important;
+}
+.ui-content {
+	margin: 0em !important;
+	padding: 0em !important;
+	text-align: center !important;
+}
+.ui-content a {
+	margin: 0em !important;
+	padding: 0em !important;
+}
+#page_footer {
+	background: url('images/footer.png') no-repeat center bottom !important;
+	margin: 0em !important;
+	padding: 0em !important;
+	text-align: center !important;
+}
+#page_footer a {
+	border: none !important;
+	background: none !important;
+	text-decoration: none !important;
+	display: inline-block !important;
+	margin: 0em !important;
+	padding: 0em !important;
+}
+#page_footer table {
+	height: 100% !important;
+	width: 100% !important;
+	margin: 0em !important;
+	padding: 0em !important;
+	text-align: center !important;
+	color: #67ABCA !important;
+	border-collapse: collapse !important;
+}
+#page_footer table th {
+	font-weight: bold !important;
+}
+div.icon {
+	margin: 0em !important;
+	padding: 0em !important;
+	text-align: center !important;
+	text-shadow: none !important;	
+}
+div.icon p {
+	font-size: 22px !important;
+	color:#67ABCA !important;
+}
+.ui-body-a,.ui-overlay-a {	
+	color: #FAFAFA !important;
+	text-shadow: 0 1px 0 #EEEEEE !important;
+	background: none !important;
+}
+#listAnnuaire li {
+	border: 1px solid #777777;
+	border-radius: 10px !important;
+	margin: 0em !important;
+	padding: 1em !important;
+	color: #777777 !important;
+	background-color: #EEEADD;
+}
+li.noneResultAnnuaire {
+	text-align: center !important;
+}
+li.resultAnnuaire {
+	text-align: left !important;
+}
+#listAnnuaire li a:active, #listAnnuaire li a:visited, #listAnnuaire li a:link, #listAnnuaire li a:hover {
+	color: #AAAAAA !important;
+	text-decoration: none !important;
+}
+#searchAnnuaire {
+	background: none !important;
+	color: #FAFAFA !important;
+}
+
+
+
 
 .ui-bar-a .ui-link-inherit {
 	color: #000;
@@ -42,13 +131,7 @@
 
 }
 
-.ui-body-a,.ui-overlay-a {
-	
-	color: #fafafa !important;
-	text-shadow: 0 1px 0 #eeeeee;
-	background: none;
 
-}
 
 .ui-overlay-a {
 	background-image: none;
@@ -87,15 +170,6 @@
 	font-weight: bold;
 	color: #fafafa;
 	text-shadow: 0 1px 0 #000000;
-	/*
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa),
-		to(#000000));
-	background-image: -webkit-linear-gradient(#000000, #fafafa);
-	background-image: -moz-linear-gradient(#000000, #fafafa);
-	background-image: -ms-linear-gradient(#000000, #fafafa);
-	background-image: -o-linear-gradient(#000000, #fafafa);
-	background-image: linear-gradient(#000000, #fafafa);
-	*/
 }
 
 .ui-btn-up-a:visited,.ui-btn-up-a a.ui-link-inherit {
@@ -450,19 +524,6 @@ a.ui-link-inherit {
 	-webkit-box-shadow: 0 0 12px rgba(0, 0, 0, .6);
 	box-shadow: 0 0 12px rgba(0, 0, 0, .6);
 }
-/*
-.ui-shadow {
-	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
-	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
-	box-shadow: 0 1px 3px rgba(0, 0, 0, .2)
-}
-
-.ui-bar-a .ui-shadow,.ui-bar-b .ui-shadow,.ui-bar-c .ui-shadow {
-	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .3);
-	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .3);
-	box-shadow: 0 1px 0 rgba(255, 255, 255, .3);
-}
-*/
 .ui-shadow-inset {
 	-moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, .2);
 	-webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, .2);
@@ -521,34 +582,8 @@ a.ui-link-inherit {
 	width: 100%;
 	text-align: center;
 }
-#uda_header  {
-	margin: 0;
-	padding: 0;
-	height:10% !important;
-	text-align: center;
-}
-#uda_header img {
-	margin: 0;
-	padding: 0;
-}
-#page_footer {
-	background-image: url('images/footer.png');
-	background-repeat: no-repeat;
-	background-position: center bottom;
-	margin: 0;
-	padding: 0;
-	text-align: center;
-}
-#page_footer a {
-	background: none;
-	border: none;
-	text-decoration: none;
-	align: center;
-	display: inline-block;
-	margins: 0px !important;
-	padding:0;
-	height:100%;
-}
+
+
 .mainPage {
 	margin: 0px !important;
 	padding: 0px !important;
@@ -572,18 +607,7 @@ a.ui-link-inherit {
 	font-weight: bold;
 	text-align: center;
 }
-.ui-content {
-	text-align: center;
-	padding: 0px;
-	margin: 0px;
-}
 
-
-
-.ui-content a {
-	margin: 0px;
-	padding: 0px;
-}
 table{
 	height: 100% !important;
 	width: 100% !important;
@@ -611,36 +635,7 @@ th {
 	display:block;
 	margin-top: 0em;
 }
-#name{
-	background: none;
-	color: #67abca;
-}
-#listAnnu{
-	background: none;
-	color: ##636363 !important;
-}
-#listAnnu li{
-	border: 1px #000;
-}
-.udamob_contact_a:active, .udamob_contact_a:visited, .udamob_contact_a:link, .udamob_contact_a:hover {
-	color: #aaa;
-	text-decoration: none;	
-}
-.annuaire{
-	border-radius: 0.6em 0.6em 0.6em 0.6em;
-	background: #eeeadd ;
-	color:#636363;
-	padding:1px !important;
-	margins: 1px !important;	
-}
-.icon{
-	text-align: center;
-	text-shadow: none !important;
-	color:#67abca !important;
-	font-size: 22px;
 
-	display: block;
-}
 .rssBody a{
 	color:#636363 !important;
 	text-decoration: none !important;
@@ -674,23 +669,7 @@ th {
 	text-align: center;
 	display: block;
 }
-html,body {
-	background-image: url('images/background_home.png') !important;
-	font-family: Shanti !important;
-	width: 100% !important;
-	height: 100% !important;
-	padding: 0;
-	margin: 0;
-	display:block;
-}
-body.loading .Loading {
-	display: block;
-}
-#uda_header{
-	text-align: center;
-	width:100%;
-	box-shadow: 0 0 10px white;
-}
+
 .scrollable {
    position:absolute;
    overflow:hidden;
