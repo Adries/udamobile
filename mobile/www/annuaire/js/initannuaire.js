@@ -37,16 +37,4 @@ function makelist(json) {
 		html+='<li class=\"noneResultAnnuaire\">Aucune résultat pour la recherche demandée.</li>';
 	}
 	$("#listAnnuaire").html(html);
-	init();
-}
-
-function init() {
-    var viewPortHeight = $(window).height(),
-	headerHeight = $('div[data-role="header"]').height(),
-	footerHeight = $('div[data-role="footer"]').height(),
-	contentHeight = viewPortHeight + headerHeight + footerHeight + 'px';
-    
-    alert(footerHeight);
-
-    $('div[data-role="content"]').css("height", contentHeight);
 }

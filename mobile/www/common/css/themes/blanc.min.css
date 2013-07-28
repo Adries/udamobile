@@ -2,7 +2,7 @@
 html, body {
 	height: 100% !important;
 	width: 100% !important;
-	background: url('images/background_home.png') repeat center center !important;
+	background: url('images/background_home.png') repeat top center !important;
 	font-family: Shanti !important;
 	margin: 0em !important;
 	padding: 0em !important;
@@ -20,6 +20,11 @@ body.loading .Loading {
 	text-align: center !important;
 }
 #uda_header img {
+	margin: 0em !important;
+	padding: 0em !important;
+}
+#mainHeader {
+	width: 100% !important;
 	margin: 0em !important;
 	padding: 0em !important;
 }
@@ -44,14 +49,6 @@ body.loading .Loading {
 	padding: 0em !important;
 	text-align: center !important;
 }
-#page_footer a {
-	border: none !important;
-	background: none !important;
-	text-decoration: none !important;
-	display: inline-block !important;
-	margin: 0em !important;
-	padding: 0em !important;
-}
 #page_footer table {
 	height: 100% !important;
 	width: 100% !important;
@@ -61,8 +58,13 @@ body.loading .Loading {
 	color: #67ABCA !important;
 	border-collapse: collapse !important;
 }
-#page_footer table th {
-	font-weight: bold !important;
+#page_footer table a {
+	border: none !important;
+	background: none !important;
+	text-decoration: none !important;
+	display: inline-block !important;
+	margin: 0em !important;
+	padding: 0em !important;
 }
 div.icon {
 	margin: 0em !important;
@@ -101,7 +103,25 @@ li.resultAnnuaire {
 	background: none !important;
 	color: #FAFAFA !important;
 }
-
+#mainNavbar {
+	margin: 0em !important;
+	padding: 0em !important;
+	text-align: center !important;
+}
+#mainNavbar a {
+	display: inline-block;
+	width: 45% !important;
+	margin: 0em !important;
+	padding: 0em !important;
+	border: none !important;
+	background: none !important;
+}
+#mainNavbar a img {
+	width: 100% !important;
+	margin: 0em !important;
+	padding: 0em !important;
+	border: none !important;
+}
 
 
 
@@ -701,25 +721,7 @@ th {
     position:relative;
     cursor:default;
 }
-#mainNavbar {
-	margin: 0 !important;
-	padding: 0 !important;
-	text-align: center !important;
-}
-#mainNavbar a {
-	display: inline-block;
-	width: 45% !important;
-	margin: 0 !important;
-	padding: 0 !important;
-	border: none !important;
-	background: none !important;
-}
-#mainNavbar a img {
-	width: 100% !important;
-	margin: 0 !important;
-	padding: 0 !important;
-	border: none !important;
-}
+
 
 .bottomIcon{
 	width: 80%;
