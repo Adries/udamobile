@@ -182,7 +182,7 @@ function setdate() {
 function makeaddress(nom,address,code,description,latitude,longitude) {
 	$.msgBox({
 		title: 'Chargement...',
-		content: 'chargement de l\'itineraire...',
+		content: 'Chargement de l\'itineraire...',
 		type: 'info',
 		opacity:0.9,
 		showButtons:false,
