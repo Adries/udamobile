@@ -1,4 +1,0 @@
-- url: /mystaticdir/(.*\.appcache)
-  static_files: mystaticdir/\1
-  mime_type: text/cache-manifest
-  upload: mystaticdir/(.*\.appcache)

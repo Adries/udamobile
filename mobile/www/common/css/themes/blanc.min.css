@@ -83,7 +83,7 @@ div.icon p {
 }
 #listAnnuaire li {
 	border: 1px solid #777777;
-	border-radius: 10px !important;
+	border-radius: 0.6em 0.6em 0.6em 0.6em !important;
 	margin: 0em !important;
 	padding: 1em !important;
 	color: #777777 !important;
@@ -122,6 +122,71 @@ li.resultAnnuaire {
 	padding: 0em !important;
 	border: none !important;
 }
+#restaurantContent {
+	width: 100% !important;
+	margin: 0em !important;
+	padding: 0em !important;
+	text-align: center !important;
+}
+#restaurantMapHolder {
+	height: 30% !important;
+	width: 99% !important;
+	margin-top: 0em !important;
+	margin-right: 8% !important;
+	padding-bottom:	20% !important;
+	color: #000000 !important;
+	overflow: hidden !important;
+}
+table#restaurantTextMenu {
+	margin: 0em !important;
+	padding: 0em !important;
+	border-collapse: collapse !important;
+}
+#listRestaurant li {
+	border: 1px solid #CCCCCC !important;
+	background-color: #000000 !important;
+	text-decoration: none !important;
+	font-weight: bold !important;
+}
+#listMenu {
+	color: #FAFAFA !important;
+}
+#listMenu li {
+	border: 2px solid #525252 !important;
+	border-radius: 0.6em 0.6em 0.6em 0.6em !important;
+	background-color: transparent !important;
+	color:#FFFFFF !important;
+}
+li.noneResultMenu {
+	text-align: center !important;
+}
+.underline {
+	text-decoration: underline !important;
+}
+#Rname {
+	width: 100% !important;
+	background: url(./css/blackboard.jpg) no-repeat center center !important;
+}
+#restaurantAddressText {
+	margin-right:5%;
+	width:99%;
+	height:40%;
+	display:inline-block;
+}
+.adp-directions {
+	border-collapse: collapse !important;
+	color: #FFFFFF !important;
+	cursor: pointer !important;
+}
+.adp-placemark {
+	height: 10% !important !important;
+}
+.adp-step, .adp-substep{
+	background-color:#000000;
+	text-color: #FAFAFA;
+}
+			
+
 
 
 
@@ -594,6 +659,10 @@ a.ui-link-inherit {
 		height: auto;
 	}
 }
+
+
+
+
 .Loading {
 	display: none;
 	position: fixed;
@@ -683,12 +752,7 @@ th {
 	font-family: Shanti;
 	src: url('Shanti-Regular.ttf');
 }
-.contents{
-	margin: 0;
-	padding:0;
-	text-align: center;
-	display: block;
-}
+
 
 .scrollable {
    position:absolute;

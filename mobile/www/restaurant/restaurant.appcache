@@ -1,7 +1,0 @@
-CACHE MANIFEST
-
-CACHE:
-restaurant2.html
- 
-FALLBACK:
-*.html offline.html

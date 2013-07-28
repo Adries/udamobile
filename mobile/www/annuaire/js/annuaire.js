@@ -1,3 +1,6 @@
+/**
+ * initannuaire
+ */
 function initannuaire() {
 	var name = $('#searchAnnuaire').val();
 	
@@ -12,6 +15,10 @@ function initannuaire() {
     });
 }		              
 
+/**
+ * makelist
+ * @param json
+ */
 function makelist(json) {
 	var html = '',
 		makelist, n, listelement;
@@ -20,7 +27,7 @@ function makelist(json) {
 		makelist = jQuery.isPlainObject(json) ? json: jQuery.parseJSON(json);
 		n = makelist.count;
 		if(n==0) {
-			html+='<li class=\"noneResultAnnuaire\">Aucune résultat pour la recherche demandée.</li>';
+			html+='<li class=\"noneResultAnnuaire\">Aucun résultat pour la recherche demandée.</li>';
 		}
 		else {
 			listelement = makelist.exact;			
