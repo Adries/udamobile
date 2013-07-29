@@ -7,16 +7,18 @@
 		<link rel="stylesheet" href="../common/css/jquery.mobile.structure-1.3.1.min.css" /> 
 		<link rel="stylesheet" href="../common/css/msgBoxLight.css" />
 		<link rel="stylesheet" href="../common/css/themes/blanc.min.css" />
+		
 		<script type="text/javascript" src="../common/js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="../common/js/jquery.msgBox.js"></script>
 		<script type="text/javascript">
 			$(document).bind('mobileinit', function(){
 				$.mobile.allowCrossDomainPages = true;
-				$.mobile.defaultPageTransition = "slide";
+				$.mobile.defaultPageTransition = 'slide';
 			});
 		</script>
 		<script type="text/javascript" src="../common/js/jquery.mobile-1.3.0.min.js"></script>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true&amp;libraries=places"></script>	
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&v=3&libraries=geometry"></script>	
 		<script type="text/javascript" src="js/restaurant.js"></script>
 	</head>	
 	<body>
@@ -83,7 +85,7 @@
 		</div>
 		
 		<!-- MENU PAGE -->
-		<div id="menupage" data-role="page" data-theme="a">
+		<div id="menuPage" data-role="page" data-theme="a">
 			<!-- HEADER -->
 			<div data-role="header" id="uda_header">
 				<div data-role="navbar">
@@ -102,27 +104,25 @@
 				</div>
 			</div>
 			<!-- CONTENT -->
-			<div id="restaurantContent" data-role="content" data-theme="a">	
+			<div id="restaurantContent" data-role="content">	
 				<div id="pdate"></div>
 				<div id="Rname"></div>
 				<table id="restaurantTextMenu">
 					<tr>
-						<td id="btnLast" class="backicons" data-transition="slide" data-ajax="false">
+						<td id="btnLast" class="backicons" data-transition="slide" data-ajax="false" align="right">
 							<a href="#menupage"><img src="css/left2.png"></img></a>
 						</td>
-						<td>	
+						<td align="center">	
 							<ul id="listMenu" class="ui-li" data-role="listview" data-inset="true" width="100%"></ul>			
 						</td>
-						<td id="btnNext" class="backicons" data-transition="slide" data-ajax="false">
+						<td id="btnNext" class="backicons" data-transition="slide" data-ajax="false" align="left">
 							<a href="#menupage"><img src="css/right2.png"></img></a>
 						</td>
 					</tr>
 				</table>
-				<div id="restaurantAddress" class="ui-body-a"></div>
-				<div id="itineraire">	
-			  		 <div class="contents" class="ui-body-a" id="restaurantAddressText"></div>	
-			  		 <div id="restaurantMapHolder"></div>				
-				</div>
+				<div id="restaurantAddress"></div>
+			  	<div id="restaurantAddressText"></div>	
+			  	<div id="restaurantMapHolder"></div>
 			</div>		
 			<!-- FOOTER -->
 			<div id="page_footer" data-role="footer" data-position="fixed">

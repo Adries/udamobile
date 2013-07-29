@@ -1,5 +1,4 @@
-var nbelt, i, m, jsonResto, lat, lon, mapOptions, requeteItineraire, map, address, end, nomRestaurant, jour, month,
-	directionsService = new google.maps.DirectionsService(),
+var nbelt, i, m, jsonResto, lat, lon, mapOptions, map, address, end, nomRestaurant, jour, month,
 	day = new Array(),
 	today = new Date(),
 	numero = today.getDate();
@@ -10,8 +9,8 @@ var nbelt, i, m, jsonResto, lat, lon, mapOptions, requeteItineraire, map, addres
  * @param lat
  * @param lan
  */
-function init_itineraire(lat,lan) {
-	end = new google.maps.LatLng(lat,lan);
+function init_itineraire(lat, lon) {
+	end = new google.maps.LatLng(lat,lon);
 	getLocation();
 }
 
@@ -19,9 +18,16 @@ function init_itineraire(lat,lan) {
  * getLocation
  */
 function getLocation() {
-	$('#restaurantMapHolder').css({ opacity: 0, zoom: 0 });
+	$.msgBox({
+		title: 'Chargement...',
+		content: 'Chargement de l\'itineraire...',
+		type: 'info',
+		opacity:0.9,
+		showButtons:false,
+		autoClose:true
+	});
 	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition,showError);
+		navigator.geolocation.getCurrentPosition(showPosition, showError);
 	}
 	else {
 		x.innerHTML = 'La géolocalisation n\'est pas supporté par le navigateur.';
@@ -33,10 +39,8 @@ function getLocation() {
  * @param position
  */
 function showPosition(position) {
-	address = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);		
+	address = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);		
 	initialize();
-	$('#restaurantMapHolder').show();
-	$('#restaurantMapHolder').css({ opacity: 1, zoom: 1 });
 }
 
 /**
@@ -64,32 +68,34 @@ function showError(error) {
  * initialize
  */
 function initialize() {
-	var optionsCarte;
+	var directionsDisplay = new google.maps.DirectionsRenderer(),
+		directionsService = new google.maps.DirectionsService(),
+		requeteItineraire = {
+			origin: address,
+			destination: end,
+			region: 'fr',
+			travelMode: google.maps.DirectionsTravelMode.DRIVING
+		};
 	
-	directionsDisplay = new google.maps.DirectionsRenderer();
-    optionsCarte = {
-    	zoom: 7,
-    	mapTypeId: google.maps.MapTypeId.ROADMAP,
-        center: address,
-        mapTypeControlOptions: {
-        	style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
-        	position: google.maps.ControlPosition.TOP_LEFT
-        }
+	mapOptions = {
+		zoom: 7,
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		center: address,
+		mapTypeControlOptions: {
+			style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+			position: google.maps.ControlPosition.TOP_LEFT
+		}
 	};
-    map = new google.maps.Map(document.getElementById('restaurantMapHolder'), optionsCarte);
-    directionsDisplay.setMap(map);
-    directionsDisplay.setPanel(document.getElementById('restaurantAddressText'));
-    requeteItineraire = {
-    	origin: address,
-        destination: end,
-        region: 'fr',
-		ravelMode: google.maps.DirectionsTravelMode.DRIVING
-    };
-    directionsService.route(requeteItineraire, function(response, status) {
-    	if (status == google.maps.DirectionsStatus.OK) {
-    		directionsDisplay.setDirections(response);
-    	}
-    });
+	
+	map = new google.maps.Map(document.getElementById('restaurantMapHolder'), mapOptions);
+	directionsDisplay.setMap(map);
+	directionsDisplay.setPanel(document.getElementById('restaurantAddressText'));
+	directionsService.route(requeteItineraire, function(response, status) {
+		if (status == google.maps.DirectionsStatus.OK) {
+			directionsDisplay.setDirections(response);
+		}
+	});
+	distance = google.maps.geometry.spherical.computeDistanceBetween (address, end); 
 }
 
 /**
@@ -121,7 +127,7 @@ function makeList(json) {
 			for(i=0; i<nbelt;i++) {
 				html += '<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\"'
 						+ 'onclick=\"makeFicheMenu(\'' + escape(jsonResto[i].nom) + '\',\'' + escape(jsonResto[i].adresse) + '\',\'' + jsonResto[i].code_postal + '\',\'' + jsonResto[i].description + '\',\'' + jsonResto[i].latitude + '\',\'' + jsonResto[i].longitude + '\');menu(' + i + ')\">'
-						+ '<div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a href=\"#menupage\" class=\"ui-link-inherit\" data-transition=\"slide\">'
+						+ '<div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a href=\"#menuPage\" class=\"ui-link-inherit\" data-transition=\"slide\">'
 						+ '<img src=\"http://udamobile.u-clermont1.fr/v2/restaurant/img/' + jsonResto[i].id + '.jpg\"/>'
 						+ jsonResto[i].nom + '(' + jsonResto[i].etat + ')'
 						+ '</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"></span></div></li>';
@@ -180,14 +186,6 @@ function setdate() {
  * @param lon
  */
 function makeaddress(nom,address,code,description,latitude,longitude) {
-	$.msgBox({
-		title: 'Chargement...',
-		content: 'Chargement de l\'itineraire...',
-		type: 'info',
-		opacity:0.9,
-		showButtons:false,
-		autoClose:true
-	});
 	nomRestaurant = unescape(nom);
 	lat = latitude;
 	lon = longitude;

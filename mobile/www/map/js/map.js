@@ -1,15 +1,12 @@
-var directionsService, directionsDisplay, input, autocomplete, address, end, mapOptions, map, myMarker;
+var input, autocomplete, address, mapOptions, map, myMarker;
 
 /**
  * initialize
  */
 function initialize() {
-	directionsService = new google.maps.DirectionsService();
-	directionsDisplay = new google.maps.DirectionsRenderer();
 	input = document.getElementById('geolocalSearchTextField');
 	autocomplete = new google.maps.places.Autocomplete(input);
-	address = new google.maps.LatLng(45.769,3.09);		
-	end = new google.maps.LatLng(45.764892,3.086801);
+	address = new google.maps.LatLng(45.769,3.09);
 	mapOptions = {
 		zoom: 17,
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -35,9 +32,8 @@ function getLocation() {
 		showButtons:false,
 		autoClose:true
 	});
-	$('#geolocalMapHolder').css({ opacity: 0, zoom: 0 });
 	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition,showError);
+		navigator.geolocation.getCurrentPosition(showPosition, showError);
 	}
 	else {
 		x.innerHTML = 'La géolocalisation n\'est pas supporté par le navigateur.';
@@ -55,14 +51,12 @@ function showPosition(position) {
 		center: address,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
-	map = new google.maps.Map(document.getElementById('geolocalMapHolder'),mapOptions);	
+	map = new google.maps.Map(document.getElementById('geolocalMapHolder'), mapOptions);	
 	google.maps.event.trigger(map,'resize');
 	myMarker = new google.maps.Marker({
 		map: map,
 		position: address
-	});	
-	$('#geolocalMapHolder').show();
-	$('#geolocalMapHolder').css({ opacity: 1, zoom: 1 });
+	});
 }
 
 /**
@@ -90,19 +84,17 @@ function showError(error) {
  * search_er
  */
 function search_er() {
-	var place;
+	var place, infowindow;
 	
-	map = new google.maps.Map(document.getElementById('geolocalMapHolder'),mapOptions);
+	map = new google.maps.Map(document.getElementById('geolocalMapHolder'), mapOptions);
 	autocomplete.bindTo('bounds', map);
 	
 	place = autocomplete.getPlace();
-	
-	if (!place.geometry) {
-		//Inform the user that the place was not found and return.
-		input.className = 'notfound';
+
+	if (typeof(place) === 'undefined' || !place.geometry) {
 		return;
 	}
-	//If the place has a geometry, then present it on a map.
+
 	if (place.geometry.viewport) {
 		map.fitBounds(place.geometry.viewport);
 	} 
@@ -111,7 +103,7 @@ function search_er() {
 		map.setZoom(17); 
 	}
 	
-	var infowindow = new google.maps.InfoWindow({
+	infowindow = new google.maps.InfoWindow({
 		map: map,
 		position: place.geometry.location,
 		content: input.value

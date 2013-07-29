@@ -1,4 +1,4 @@
-/* COMMON */
+/* CHANGED */
 html, body {
 	height: 100% !important;
 	width: 100% !important;
@@ -7,10 +7,13 @@ html, body {
 	margin: 0em !important;
 	padding: 0em !important;
 }
-body.loading .Loading {
-	display: block !important;
+@font-face {
+	font-family: Shanti;
+	src: url('Shanti-Regular.ttf');
 }
-#mainPage {
+#mainPage, #menuPage {
+	height: 100% !important;
+	width: 100% !important;
 	margin: 0em !important;
 	padding: 0em !important;
 }
@@ -25,21 +28,6 @@ body.loading .Loading {
 }
 #mainHeader {
 	width: 100% !important;
-	margin: 0em !important;
-	padding: 0em !important;
-}
-.ui-bar-a {
-	border: none !important;
-	background: none !important;
-	color: #FAFAFA !important;
-	font-weight: bold !important;
-}
-.ui-content {
-	margin: 0em !important;
-	padding: 0em !important;
-	text-align: center !important;
-}
-.ui-content a {
 	margin: 0em !important;
 	padding: 0em !important;
 }
@@ -75,11 +63,6 @@ div.icon {
 div.icon p {
 	font-size: 22px !important;
 	color:#67ABCA !important;
-}
-.ui-body-a,.ui-overlay-a {	
-	color: #FAFAFA !important;
-	text-shadow: 0 1px 0 #EEEEEE !important;
-	background: none !important;
 }
 #listAnnuaire li {
 	border: 1px solid #777777;
@@ -122,22 +105,14 @@ li.resultAnnuaire {
 	padding: 0em !important;
 	border: none !important;
 }
-#restaurantContent, #geolocalContent {
+#restaurantContent, #geolocalContent, #listmapContent {
 	width: 100% !important;
 	margin: 0em !important;
 	padding: 0em !important;
 	text-align: center !important;
 }
-#restaurantMapHolder {
-	height: 30% !important;
-	width: 99% !important;
-	margin-top: 0em !important;
-	margin-right: 8% !important;
-	padding-bottom:	20% !important;
-	color: #000000 !important;
-	overflow: hidden !important;
-}
 table#restaurantTextMenu {
+	width: 100% !important;
 	margin: 0em !important;
 	padding: 0em !important;
 	border-collapse: collapse !important;
@@ -167,39 +142,133 @@ li.noneResultMenu {
 	width: 100% !important;
 	background: url(./css/blackboard.jpg) no-repeat center center !important;
 }
-#restaurantAddressText {
-	margin-right:5%;
-	width:99%;
-	height:40%;
-	display:inline-block;
+#Rname h3, #pdate, #restaurantAddress {
+	color: #FAFAFA !important;
+}
+#restaurantAddressText, #itineraireText {
+	margin: 1em !important;
+	padding: 0em !important;
 }
 .adp-directions {
+	width: 100% !important;
 	border-collapse: collapse !important;
 	color: #FFFFFF !important;
 	cursor: pointer !important;
 }
 .adp-placemark {
-	height: 10% !important !important;
+	height: 10% !important;
+	width: 100% !important;
+	color: #777777 ;
+	text-shadow: 0 1px 0 #636363;
+	font-weight: bold;
 }
-.adp-step, .adp-substep{
+.adp-step, .adp-substep, .adp-legal, .adp-summary {
 	background-color:#000000;
-	text-color: #FAFAFA;
+	color: #FAFAFA;
 }
-#geolocalMapHolder {
-	height: 50% !important;
+#geolocalMapHolder, #listMapHolder, #restaurantMapHolder {
+	margin: 1em !important;
+	padding: 0em !important;
+	height: 70% !important;
 	color: #000000 !important;
 }
 #geolocalSearchTextField {
-	color: #67abca !important;
+	color: #67ABCA !important;
 	text-shadow: none !important;
 	border: none !important;
 }
+#listBuilding li, #listIntoBuilding li {
+	border: 2px solid #525252 !important;
+	border-radius: 0.6em 0.6em 0.6em 0.6em !important;
+	background-color: transparent !important;
+	color: #FFFFFF !important;
+}
 
 
-			
 
 
 
+.rssBody a{
+	color:#636363 !important;
+	text-decoration: none !important;
+}
+.rssBody li{
+	border-radius: 0.6em 0.6em 0.6em 0.6em;
+	border: 2px #636363 !important;
+	background: #eeeadd;
+	color:#636363 !important;
+	text-align: left !important;
+	margins: 1px !important;	
+	list-style-type: none;	
+	list-style-image: url('right2.png') !important; 
+}
+.reset{
+	color: #67abca;
+	margin: 10;
+}
+.scrollable {
+   position:absolute;
+   overflow:hidden;
+   width: 100%;
+   top:0;
+   bottom:0; /* instead of height: 100%;*/
+   box-shadow: 0 0 20px purple;
+   /*  height:198px; */
+   z-index: 20;
+}
+.scrollable .items {
+	width:100%;
+	position:absolute;
+	clear:both;
+	box-shadow: 0 0 30px green;
+}
+.items div {
+	float:left;
+	width:10%;
+	height:100%;
+}
+.scrollable img {
+    float:left;
+    width:100%;
+   height: auto;
+}
+.scrollable .active {
+    border:2px solid #000;
+    position:relative;
+    cursor:default;
+}
+.bottomIcon{
+	width: 80%;
+}
+
+
+/* COMMON */
+.ui-input-text.ui-focus,.ui-input-search.ui-focus {
+	-moz-box-shadow: 0 0 12px #FAFAFA;
+	-webkit-box-shadow: 0 0 12px #FAFAFA;
+	box-shadow: 0 0 12px #FAFAFA;
+	color: #FAFAFA;
+}
+.ui-body-a,.ui-overlay-a {	
+	color: #000000 !important;
+	text-shadow: 0 1px 0 #EEEEEE !important;
+	background: none !important;
+}
+.ui-bar-a {
+	border: none !important;
+	background: none !important;
+	color: #FAFAFA !important;
+	font-weight: bold !important;
+}
+.ui-content {
+	margin: 0em !important;
+	padding: 0em !important;
+	text-align: center !important;
+}
+.ui-content a {
+	margin: 0em !important;
+	padding: 0em !important;
+}
 
 .ui-bar-a .ui-link-inherit {
 	color: #000;
@@ -222,21 +291,9 @@ li.noneResultMenu {
 	color: #fafafa;
 }
 
-.ui-bar-a,.ui-bar-a input,.ui-bar-a select,.ui-bar-a textarea,.ui-bar-a button
-	{
-
-}
-
-
-
 .ui-overlay-a {
 	background-image: none;
 	border-width: 0;
-}
-
-.ui-body-a,.ui-body-a input,.ui-body-a select,.ui-body-a textarea,.ui-body-a button
-	{
-
 }
 
 .ui-body-a .ui-link-inherit {
@@ -646,12 +703,7 @@ a.ui-link-inherit {
 	box-shadow: inset 0 0 3px #fafafa, 0 0 9px #fafafa;
 }
 
-.ui-input-text.ui-focus,.ui-input-search.ui-focus {
-	-moz-box-shadow: 0 0 12px #fafafa;
-	-webkit-box-shadow: 0 0 12px #fafafa;
-	box-shadow: 0 0 12px #fafafa;
-	color: #fafafa;
-}
+
 .ui-mobile-nosupport-boxshadow * {
 	-moz-box-shadow: none !important;
 	-webkit-box-shadow: none !important;
@@ -669,135 +721,4 @@ a.ui-link-inherit {
 	html,body {
 		height: auto;
 	}
-}
-
-
-
-
-.Loading {
-	display: none;
-	position: fixed;
-	z-index: 1000;
-	height: 100%;
-	width: 100%;
-	text-align: center;
-}
-
-
-.mainPage {
-	margin: 0px !important;
-	padding: 0px !important;
-	text-align: center;
-	width: 100% !important;
-	height: 98% !important;
-	overflow:hidden;
-}
-#maintable {
-	border-collapse: collapse;
-	text-align: center;
-	margin:0;
-	padding:0;
-	width: 100% !important;
-}
-#maintable a {
-	text-align: center;
-	margin: 0;
-}
-.ui-block-a {
-	font-weight: bold;
-	text-align: center;
-}
-
-table{
-	height: 100% !important;
-	width: 100% !important;
-	margin: 0;
-	padding: 0;
-	text-align: center;
-	color:#67abca !important;
-	border-collapse: collapse;
-}
-th {
-	font-weight: bold;
-}
-#maintable td,th {
-	border: none;
-	text-align: center;
-	text-color: #67abca;
-}
-#mapholder {
-	padding-top:20%;
-	padding-bottom:25%;
-	position:absolute;
-	width:100%;
-	height:72%;
-	overflow:hidden;
-	display:block;
-	margin-top: 0em;
-}
-
-.rssBody a{
-	color:#636363 !important;
-	text-decoration: none !important;
-}
-.rssBody li{
-	border-radius: 0.6em 0.6em 0.6em 0.6em;
-	border: 2px #636363 !important;
-	background: #eeeadd;
-	color:#636363 !important;
-	text-align: left !important;
-	margins: 1px !important;	
-	list-style-type: none;	
-	list-style-image: url('right2.png') !important; 
-}
-
-.reset{
-	color: #67abca;
-	margin: 10;
-}
-#iframe{
-
-}
-@font-face
-{
-	font-family: Shanti;
-	src: url('Shanti-Regular.ttf');
-}
-
-
-.scrollable {
-   position:absolute;
-   overflow:hidden;
-   width: 100%;
-   top:0;
-   bottom:0; /* instead of height: 100%;*/
-   box-shadow: 0 0 20px purple;
-   /*  height:198px; */
-   z-index: 20;
-}
-.scrollable .items {
-	width:100%;
-	position:absolute;
-	clear:both;
-	box-shadow: 0 0 30px green;
-}
-.items div {
-	float:left;
-	width:10%;
-	height:100%;
-}
-.scrollable img {
-    float:left;
-    width:100%;
-   height: auto;
-}
-.scrollable .active {
-    border:2px solid #000;
-    position:relative;
-    cursor:default;
-}
-
-
-.bottomIcon{
-	width: 80%;
 }
