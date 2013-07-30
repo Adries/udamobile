@@ -109,3 +109,8 @@ function search_er() {
 		content: input.value
 	});
 }
+
+$(document).ready(function() {
+	initialize();
+	getLocation();
+});

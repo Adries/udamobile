@@ -39,9 +39,6 @@ function set_attribute(list){
  */
 function listbuildings(list){
 	var html = '', places;
-	
-	$('#listBuilding').hide();
-	$('#listIntoBuilding').show();
 
 	switch(list) {
 		case 'universite':
@@ -175,9 +172,13 @@ function listbuildings(list){
 		counter++;
 	}
 	$('#listIntoBuilding').html(html);
+	
 	$('#listBuilding').hide();
+	$('#listIntoBuilding').show();
+	$('#listMapHolder').hide();
+	
 	a = 1;
-	$('#backButton').attr('onclick', 'back_to_category('+a+')');
+	$('#backButton').attr('onclick', 'back_to_category(' + a + ')');
 }
 
 /**
@@ -189,7 +190,7 @@ function back_to_category(a){
 		$('#listmapHeader').show();
 		$('#listIntoBuilding').hide();
 		$('#listBuilding').show();
-		$('#listMapHolder').css({ opacity: 0, zoom: 0 });
+		$('#listMapHolder').hide();
 		$('#backButton').attr('onclick', 'window.location=\'map.html\';');
 	}
 	else {
@@ -197,7 +198,7 @@ function back_to_category(a){
 		$('#listmapHeader').show();
 		$('#listIntoBuilding').show();
 		$('#listBuilding').hide();
-		$('#listMapHolder').css({ opacity: 0, zoom: 0 });
+		$('#listMapHolder').hide();
 		$('#backButton').attr('onclick', 'back_to_category(' + a + ')');
 	}
 }
@@ -245,9 +246,11 @@ function showPosition(position) {
 	latitude[1]=new google.maps.LatLng(position.coords.latitude);
 	longitude[1]=new google.maps.LatLng(position.coords.longitude);
 	initialize();
+	$('#listmapHeader').hide();
 	$('#listBuilding').hide();
 	$('#listIntoBuilding').hide();
-	$('#listmapHeader').hide();
+	$('#itineraireText').show();
+	$('#listMapHolder').show();
 }
 
 /**
@@ -319,11 +322,11 @@ function showAll() {
 	};
 	map = new google.maps.Map(document.getElementById('listMapHolder'), mapOptions);
 	
-	$('#listMapHolder').show();
+	$('#listmapHeader').hide();
 	$('#listBuilding').hide();
 	$('#listIntoBuilding').hide();
-	$('#listmapHeader').hide();
-	$('#listMapHolder').css({ opacity: 1, zoom: 1 });
+	$('#itineraireText').show();
+	$('#listMapHolder').show();
 	
 	switch(listAttribute){
 		case 'universite':
@@ -373,5 +376,10 @@ function showAll() {
 
 $(document).on('click','#backButton', function() {
 	html="";
-	$('#itineraireText').text("");
+	$('#itineraireText').text('');
+});
+
+$(document).ready(function() {
+	$('#itineraireText').hide();
+	$('#listMapHolder').hide();
 });

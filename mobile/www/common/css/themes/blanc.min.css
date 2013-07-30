@@ -169,7 +169,7 @@ li.noneResultMenu {
 #geolocalMapHolder, #listMapHolder, #restaurantMapHolder {
 	margin: 1em !important;
 	padding: 0em !important;
-	height: 70% !important;
+	height: 50% !important;
 	color: #000000 !important;
 }
 #geolocalSearchTextField {

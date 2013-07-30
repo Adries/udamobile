@@ -11,17 +11,17 @@
 		
 		<script type="text/javascript" src="../common/js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="../common/js/jquery.msgBox.js"></script>
-		<script type="text/javascript" src="js/map.js"></script>
 		<script type="text/javascript">
 			$(document).bind('mobileinit', function(){
 				$.mobile.allowCrossDomainPages = true;
 			});
 		</script>
 		<script type="text/javascript" src="../common/js/jquery.mobile-1.3.0.min.js"> </script>
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true&amp;libraries=places"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,places&sensor=true"></script>
+		<script type="text/javascript" src="js/map.js"></script>
 	</head>
 	
-	<body onLoad="initialize();getLocation();">
+	<body>
 	
 		<!-- MAIN PAGE -->
 		<div id="mainPage" data-role="page" data-theme="a">
