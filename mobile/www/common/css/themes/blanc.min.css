@@ -58,11 +58,11 @@ div.icon {
 	margin: 0em !important;
 	padding: 0em !important;
 	text-align: center !important;
-	text-shadow: none !important;	
+	text-shadow: none !important;
 }
 div.icon p {
 	font-size: 22px !important;
-	color:#67ABCA !important;
+	color: #67ABCA !important;
 }
 #listAnnuaire li {
 	border: 1px solid #777777;
@@ -86,6 +86,13 @@ li.resultAnnuaire {
 	background: none !important;
 	color: #FAFAFA !important;
 }
+.searchAnnuaireText {
+	margin: 0em !important;
+	padding: 0em !important;
+}
+.searchAnnuaireText p {
+	color: #FAFAFA !important;
+}
 #mainNavbar {
 	margin: 0em !important;
 	padding: 0em !important;
@@ -105,7 +112,7 @@ li.resultAnnuaire {
 	padding: 0em !important;
 	border: none !important;
 }
-#restaurantContent, #geolocalContent, #listmapContent {
+#annuaireContent, #restaurantContent, #geolocalContent, #listmapContent,  #entContent {
 	width: 100% !important;
 	margin: 0em !important;
 	padding: 0em !important;
@@ -183,7 +190,16 @@ li.noneResultMenu {
 	background-color: transparent !important;
 	color: #FFFFFF !important;
 }
-
+small {
+	color: #FAFAFA !important;
+}
+#entConnexion {
+	margin: 0em !important;
+	padding: 0em !important;
+}
+#entConnexionErr, #entUsername, #entPassword {
+	color: #FAFAFA !important;
+}
 
 
 
