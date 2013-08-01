@@ -2,10 +2,11 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		
 		<title>Annuaire - Rechercher une personne</title>
 		
-		<link rel="stylesheet" href="../common/css/jquery.mobile.structure-1.3.1.min.css" />
-		<link rel="stylesheet" href="../common/css/themes/blanc.min.css" />
+		<link rel="stylesheet" href="../common/css/jquery.mobile.min.css" />
+		<link rel="stylesheet" href="../common/css/themes/uda.min.css" />
 	
 		<script type="text/javascript" src="../common/js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript">
@@ -14,7 +15,7 @@
 			});
 		</script>
 		<script type="text/javascript" src="../common/js/jquery.mobile-1.3.0.min.js"></script>
-		<script type="text/javascript" src="js/annuaire.js"></script>
+		<script type="text/javascript" src="js/annuaire.min.js"></script>
 	</head>
 	<body>
 		<!-- MAIN PAGE -->
@@ -25,12 +26,12 @@
 					<ul>
 						<li>
 							<a href="../main.html" data-transition="slide">
-								<img src="../common/css/icons/home.png">
+								<img src="../common/css/themes/icons/home.png">
 							</a>
 						</li>
 						<li>
 							<a data-rel="back" data-direction="reverse">
-								<img src="../common/css/icons/back_button.png">
+								<img src="../common/css/themes/icons/back.png">
 							</a>
 						</li>
 					</ul>
@@ -39,14 +40,14 @@
 			<!-- CONTENT -->
 			<div id="annuaireContent" data-role="content">
 				<div class="icon">
-					<img src="../common/css/icons/280x280_annuaire.png" width="30%"/>
+					<img src="../common/css/themes/icons/280x280_annuaire.png" width="30%"/>
 					<p>Rechercher un contact</p>
 				</div>
 				<div class="searchAnnuaireText">
 					<p>Nom du contact :</p>
 					<input type="text" name="searchAnnuaire" id="searchAnnuaire"/>
 					<a data-role="button" id="search" data-transition="slide" onclick="initannuaire()" data-ajax="false">
-						<img src="../common/css/icons/2search-icon.png"/>
+						<img src="../common/css/themes/icons/search.png"/>
 					</a>
 				</div>
 				<ul id="listAnnuaire" data-role="listview" data-inset="true"></ul>
@@ -57,27 +58,27 @@
 					<tr>
 						<td>
 							<a href="../restaurant/restaurant.html" data-transition="slide" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/icons/140x140_restauration.png"/>
+								<img class="bottomIcon" src="../common/css/themes/icons/140x140_restauration.png"/>
 							</a>
 						</td>
 						<td>
 							<a href="../actualite/actualite.html" data-transition="slide" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/icons/140x140_actualites.png"/>
+								<img class="bottomIcon" src="../common/css/themes/icons/140x140_actualites.png"/>
 							</a>
 						</td>
 						<td>
 							<a href="../map/map.html" data-transition="slide" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/icons/140x140_carte.png"/>
+								<img class="bottomIcon" src="../common/css/themes/icons/140x140_carte.png"/>
 							</a>
 						</td>	
 						<td>
 							<a href="../agenda/agenda.html" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/icons/140x140_agenda.png"/>
+								<img class="bottomIcon" src="../common/css/themes/icons/140x140_agenda.png"/>
 							</a>
 						</td>
 						<td>
 							<a href="../ent/ent.html" data-transition="slide" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/icons/140x140_emploidutemps.png"/>
+								<img class="bottomIcon" src="../common/css/themes/icons/140x140_emploidutemps.png"/>
 							</a>
 						</td>	
 					</tr>
