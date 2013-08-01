@@ -112,7 +112,7 @@ li.resultAnnuaire {
 	padding: 0em !important;
 	border: none !important;
 }
-#annuaireContent, #restaurantContent, #geolocalContent, #listmapContent,  #entContent {
+#annuaireContent, #restaurantContent, #geolocalContent, #listmapContent,  #entContent, #actualiteContent, #agendaContent {
 	width: 100% !important;
 	margin: 0em !important;
 	padding: 0em !important;
