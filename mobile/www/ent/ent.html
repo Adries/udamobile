@@ -17,11 +17,12 @@
 			document.addEventListener("deviceready", onDeviceReady, false);
 
 			function onDeviceReady() {
-			var ref = window.open("https://cas.u-clermont1.fr/cas/login?service=http://ent.u-clermont1.fr/Login", '_blank', 'location=yes');
-			ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
-			ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
-			ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
-			ref.addEventListener('exit', function(event) { alert(event.type); });
+				var ref = window.open("https://cas.u-clermont1.fr/cas/login?service=http://ent.u-clermont1.fr/Login", '_blank', 'location=yes');
+				ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
+				ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
+				ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+				ref.addEventListener('exit', function(event) { alert(event.type); });
+			};
 		</script>
 		<script type="text/javascript" src="../common/js/jquery.mobile-1.3.0.min.js"></script>
 	</head>
@@ -50,7 +51,7 @@
 				<!-- <div class="icon">
 					<img src="../common/css/themes/icons/280x280_emploidutemps.png" width="30%"/>
 				</div> -->
-				<iframe id="iframe" src="https://cas.u-clermont1.fr/cas/login?service=http://ent.u-clermont1.fr/Login" height="100%" width="100%"></iframe>
+				<iframe id="entIframe" src="https://cas.u-clermont1.fr/cas/login?service=http://ent.u-clermont1.fr/Login"></iframe>
 			</div>
 			<!-- FOOTER -->
 			<div id="page_footer" data-role="footer" data-position="fixed">

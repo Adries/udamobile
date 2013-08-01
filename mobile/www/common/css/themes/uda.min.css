@@ -199,6 +199,10 @@ small {
 #entConnexionErr, #entUsername, #entPassword {
 	color: #FAFAFA !important;
 }
+#entIframe {
+	height: 100% !important;
+	width: 100% !important;	
+}
 .reset{
 	color: #67ABCA !important;
 	margin: 10em !important;
