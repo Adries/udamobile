@@ -11,7 +11,7 @@ function init() {
     else {
         $.ajax({
         	url: 'http://udamobile.u-clermont1.fr/v2/connexion/',
-            type: ''POST',
+            type: 'POST',
             data: ({username: login, password : mdp}),
             cache: true,
             dataType: 'json',
