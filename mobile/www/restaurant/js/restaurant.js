@@ -217,7 +217,7 @@ function makemenu(json) {
 	var html = '',
 		jsonMenu, MenuResto, MidiSize, SoirSize, serveur;
 	
-	$('#Rname').html('<h3>' + nomRestaurant + '</h3>');
+	$('#Rname').html('<h3 style=\"background: url(images/blackboard.jpg) no-repeat center center !important;\">' + nomRestaurant + '</h3>');
 	
 	if(json != '') {
 		jsonMenu = jQuery.isPlainObject(json) ? json: jQuery.parseJSON(json);

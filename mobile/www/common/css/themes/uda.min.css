@@ -2,7 +2,7 @@
 html, body {
 	height: 100% !important;
 	width: 100% !important;
-	background: url('images/background.png') repeat top center !important;
+	background: url(images/background.png) repeat top center !important;
 	font-family: Shanti !important;
 	margin: 0em !important;
 	padding: 0em !important;
@@ -32,7 +32,7 @@ html, body {
 	padding: 0em !important;
 }
 #page_footer {
-	background: url('images/footer.png') no-repeat center bottom !important;
+	background: url(images/footer.png) no-repeat center bottom !important;
 	margin: 0em !important;
 	padding: 0em !important;
 	text-align: center !important;
@@ -147,7 +147,6 @@ li.noneResultMenu {
 }
 #Rname {
 	width: 100% !important;
-	background: url(images/blackboard.jpg) no-repeat center center !important;
 }
 #Rname h3, #pdate, #restaurantAddress {
 	color: #FAFAFA !important;
@@ -350,7 +349,7 @@ small {
 
 .ui-btn-down-a {
 	border: 1px solid #bbbbbb;
-	background-image: url('images/footer.jpg');
+	background-image: url(images/footer.jpg);
 	background-repeat: repeat-x, repeat-y;
 	font-weight: bold;
 	color: #2f3e46;
@@ -429,7 +428,7 @@ a.ui-link-inherit {
 }
 
 .ui-icon,.ui-icon-searchfield:after {
-	background-image: url('images/footer.jpg');
+	background-image: url(images/footer.jpg);
 	background-repeat: repeat-x, repeat-y;
 	background-color: rgba(0, 0, 0, .4);
 	background-image: url(images/icons-18-white.png);

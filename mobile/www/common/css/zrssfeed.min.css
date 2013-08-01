@@ -1,6 +1,6 @@
 .rssFeed {	
-	font-size: 90%;
-	margin: 2em 3em;
+	font-size: 90% !important;
+	margin: 2em !important;
 }
 .rssHeader {
 	margin: 1em !important;
@@ -29,26 +29,30 @@
 }
 .rssBody li {
 	margin: 0em !important;
+	padding: 0em 0em 0em 3em !important;
+	list-style-type: none !important;	
+	background: url(themes/images/actu_fleche.png) no-repeat left center !important;
+}
+.rssContent {
+	margin: 0em !important;
 	padding: 1em !important;
 	border: 1px solid #777777;
 	border-radius: 0.6em 0.6em 0.6em 0.6em !important;
 	color: #777777 !important;
-	background-color: #EEEADD !important;
-	list-style-type: none !important;	
-	background: url('images/actu_fleche.png') no-repeat top left;
+	background-color: #EEEADD;
 }
-.rssBody li h4 {
+.rssContent h4 {
 	margin: 0em !important;
 	padding: 0em !important;
 	font-size: 1.1em !important;
 }
-.rssBody li div {
+.rssContent div {
 	margin: 0em !important;
 	padding: 0em !important;
 	font-size: 100% !important;
 	font-style: italic !important
 }
-.rssBody li p {
+.rssContent p {
 	margin: 1em 0em 0em 0em !important;
 	padding: 0em !important;
 }
