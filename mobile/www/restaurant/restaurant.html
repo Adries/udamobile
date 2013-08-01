@@ -5,12 +5,12 @@
 		
 		<title>Restauration</title>
 		
-		<link rel="stylesheet" href="../common/css/jquery.mobile.structure-1.3.1.min.css" /> 
-		<link rel="stylesheet" href="../common/css/msgBoxLight.css" />
-		<link rel="stylesheet" href="../common/css/themes/blanc.min.css" />
+		<link rel="stylesheet" href="../common/css/jquery.mobile.min.css" /> 
+		<link rel="stylesheet" href="../common/css/msgBox.min.css" />
+		<link rel="stylesheet" href="../common/css/themes/uda.min.css" />
 		
 		<script type="text/javascript" src="../common/js/jquery-1.9.1.min.js"></script>
-		<script type="text/javascript" src="../common/js/jquery.msgBox.js"></script>
+		<script type="text/javascript" src="../common/js/msgBox.min.js"></script>
 		<script type="text/javascript">
 			$(document).bind('mobileinit', function(){
 				$.mobile.allowCrossDomainPages = true;
@@ -19,7 +19,7 @@
 		</script>
 		<script type="text/javascript" src="../common/js/jquery.mobile-1.3.0.min.js"></script>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,places&sensor=true"></script>
-		<script type="text/javascript" src="js/restaurant.js"></script>
+		<script type="text/javascript" src="js/restaurant.min.js"></script>
 	</head>	
 	<body>
 	
@@ -31,12 +31,12 @@
 					<ul>
 						<li>
 							<a data-role="button" ontouchstart="window.location='../main.html';" data-transition="slide" data-ajax="false">
-								<img src="../common/css/icons/home.png">
+								<img src="../common/css/themes/icons/home.png">
 							</a>
 						</li>	
 						<li>
 							<a data-role="button" ontouchstart="window.location='../main.html';" data-transition="slide" data-ajax="false">
-								<img src="../common/css/icons/back_button.png">
+								<img src="../common/css/themes/icons/back_button.png">
 							</a>
 						</li>
 					</ul>
@@ -45,7 +45,7 @@
 			<!-- CONTENT -->
 			<div id="restaurantContent" data-role="content">	
 				<div class="icon">
-					<img src="../common/css/icons/280x280_restauration.png" width="30%"/>
+					<img src="../common/css/themes/icons/280x280_restauration.png" width="30%"/>
 				</div>
 				<ul id="listeRestaurant" data-role="listview" data-inset="true"></ul>
 				<small>Source : CROUS Clermont-Ferrand</small>
@@ -56,27 +56,27 @@
 					<tr>
 						<td>
 							<a href="../restaurant/restaurant.html" data-transition="slide" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/icons/140x140_restauration.png"/>
+								<img class="bottomIcon" src="../common/css/themes/icons/140x140_restauration.png"/>
 							</a>
 						</td>
 						<td>
 							<a href="../actualite/actualite.html" data-transition="slide" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/icons/140x140_actualites.png"/>
+								<img class="bottomIcon" src="../common/css/themes/icons/140x140_actualites.png"/>
 							</a>
 						</td>
 						<td>
 							<a href="../map/map.html" data-transition="slide" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/icons/140x140_carte.png"/>
+								<img class="bottomIcon" src="../common/css/themes/icons/140x140_carte.png"/>
 							</a>
 						</td>	
 						<td>
 							<a href="../agenda/agenda.html" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/icons/140x140_agenda.png"/>
+								<img class="bottomIcon" src="../common/css/themes/icons/140x140_agenda.png"/>
 							</a>
 						</td>
 						<td>
 							<a href="../ent/ent.html" data-transition="slide" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/icons/140x140_emploidutemps.png"/>
+								<img class="bottomIcon" src="../common/css/themes/icons/140x140_emploidutemps.png"/>
 							</a>
 						</td>	
 					</tr>
@@ -92,12 +92,12 @@
 					<ul>
 						<li>
 							<a data-role="button" ontouchstart="window.location='../main.html';" data-transition="slide" data-ajax="false">
-								<img src="../common/css/icons/home.png">
+								<img src="../common/css/themes/icons/home.png">
 							</a>
 						</li>	
 						<li>
 							<a data-role="button" ontouchstart="window.location='../main.html';" data-transition="slide" data-ajax="false">
-								<img src="../common/css/icons/back_button.png">
+								<img src="../common/css/themes/icons/back.png">
 							</a>
 						</li>
 					</ul>
@@ -110,13 +110,13 @@
 				<table id="restaurantTextMenu">
 					<tr>
 						<td id="btnLast" class="backicons" data-transition="slide" data-ajax="false" align="right">
-							<a href="#menupage"><img src="css/left2.png"></img></a>
+							<a href="#menupage"><img src="images/left.png"></img></a>
 						</td>
 						<td align="center">	
 							<ul id="listMenu" class="ui-li" data-role="listview" data-inset="true" width="100%"></ul>			
 						</td>
 						<td id="btnNext" class="backicons" data-transition="slide" data-ajax="false" align="left">
-							<a href="#menupage"><img src="css/right2.png"></img></a>
+							<a href="#menupage"><img src="images/right.png"></img></a>
 						</td>
 					</tr>
 				</table>
@@ -130,27 +130,27 @@
 					<tr>
 						<td>
 							<a href="../restaurant/restaurant.html" data-transition="slide" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/icons/140x140_restauration.png"/>
+								<img class="bottomIcon" src="../common/css/themes/icons/140x140_restauration.png"/>
 							</a>
 						</td>
 						<td>
 							<a href="../actualite/actualite.html" data-transition="slide" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/icons/140x140_actualites.png"/>
+								<img class="bottomIcon" src="../common/css/themes/icons/140x140_actualites.png"/>
 							</a>
 						</td>
 						<td>
 							<a href="../map/map.html" data-transition="slide" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/icons/140x140_carte.png"/>
+								<img class="bottomIcon" src="../common/css/themes/icons/140x140_carte.png"/>
 							</a>
 						</td>	
 						<td>
 							<a href="../agenda/ent.html" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/icons/140x140_agenda.png"/>
+								<img class="bottomIcon" src="../common/css/themes/icons/140x140_agenda.png"/>
 							</a>
 						</td>
 						<td>
 							<a href="../ent/ent.html" data-transition="slide" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/icons/140x140_emploidutemps.png"/>
+								<img class="bottomIcon" src="../common/css/themes/icons/140x140_emploidutemps.png"/>
 							</a>
 						</td>	
 					</tr>

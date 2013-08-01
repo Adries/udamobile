@@ -228,21 +228,21 @@ function makemenu(json) {
 		
 		if(day == serveur) {
 			if(MidiSize > 0) {
-				html += "<li><img src=\"css/1371832864_applications-science.png\" class=\"icons\"></img><p>Midi : </p></li>" +
-				"<li id=\"EntréesM\"><img src=\"css/1371832359_toast.png\" class=\"icons\"></img><p>Entrées : " + jsonMenu.midi.Entrées + "</p></li>" +
-				"<li id=\"PlatsM\"><img src=\"css/1371831932_Space Food.png\" class=\"icons\"></img><p>Plats : " + jsonMenu.midi.Plats + "</p></li>" +
-				"<li id=\"LégumesM\"><img src=\"css/1371831994_pepper.png\" class=\"icons\"></img><p>Légumes : " + jsonMenu.midi.Légumes + "</p></li>" +
-				"<li id=\"DessertsM\"><img src=\"css/1371831883_strawberry_ice_cream.png\" class=\"icons\"></img><p>Desserts : " + jsonMenu.midi.Desserts + "</p></li>";
+				html += "<li><img src=\"images/applications_science.png\" class=\"icons\"></img><p>Midi : </p></li>" +
+				"<li id=\"EntréesM\"><img src=\"images/toast.png\" class=\"icons\"></img><p>Entrées : " + jsonMenu.midi.Entrées + "</p></li>" +
+				"<li id=\"PlatsM\"><img src=\"images/space_food.png\" class=\"icons\"></img><p>Plats : " + jsonMenu.midi.Plats + "</p></li>" +
+				"<li id=\"LégumesM\"><img src=\"images/pepper.png\" class=\"icons\"></img><p>Légumes : " + jsonMenu.midi.Légumes + "</p></li>" +
+				"<li id=\"DessertsM\"><img src=\"images/strawberry_ice_cream.png\" class=\"icons\"></img><p>Desserts : " + jsonMenu.midi.Desserts + "</p></li>";
 			}
 			else {
 				html += "<li><span class=\"underline\">Midi</span> : Aucun service.</li>";
 			}
 			if(SoirSize>0) {
-				html += "<li><img src=\"css/1371832845_weather-few-clouds-night.png\" class=\"icons\"></img><p>Soir : </p></li>"+
-				"<li id=\"EntréesSoir\"><img src=\"css/1371832359_toast.png\" class=\"icons\"></img><p>Entrées : " + jsonMenu.soir.Entrées + "</p></li>" +
-				"<li id=\"Plats\"><img src=\"css/1371831932_Space Food.png\" class=\"icons\"></img><p>Plats : " + jsonMenu.soir.Plats + "</p></li>" +
-				"<li id=\"Légumes\"><img src=\"css/1371831994_pepper.png\" class=\"icons\"></img><p>Légumes : " + jsonMenu.soir.Légumes + "</p></li>" +
-				"<li id=\"Desserts\"><img src=\"css/1371831883_strawberry_ice_cream.png\" class=\"icons\"></img><p>Desserts : " + jsonMenu.soir.Desserts + "</p></li>";
+				html += "<li><img src=\"images/weather_few_clouds_night.png\" class=\"icons\"></img><p>Soir : </p></li>"+
+				"<li id=\"EntréesSoir\"><img src=\"images/toast.png\" class=\"icons\"></img><p>Entrées : " + jsonMenu.soir.Entrées + "</p></li>" +
+				"<li id=\"Plats\"><img src=\"images/space_food.png\" class=\"icons\"></img><p>Plats : " + jsonMenu.soir.Plats + "</p></li>" +
+				"<li id=\"Légumes\"><img src=\"images/pepper.png\" class=\"icons\"></img><p>Légumes : " + jsonMenu.soir.Légumes + "</p></li>" +
+				"<li id=\"Desserts\"><img src=\"images/strawberry_ice_cream.png\" class=\"icons\"></img><p>Desserts : " + jsonMenu.soir.Desserts + "</p></li>";
 			}
 			else {
 				html += "<li><span class=\"underline\">Soir</span> : Aucun service.</li>";
