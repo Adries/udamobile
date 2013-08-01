@@ -30,9 +30,9 @@ $(document).ready(function () {
 			         { header: 'evenements T2C', type: 'checkbox', name: 'evenementsT2C', value: 'evenements' },
 			         { header: 'Enregistrer mes modifications', type: 'checkbox', name: 'rememberMe', value: 'theValue'}
 			        ],
-			buttons: [{ value: 'register' }, {value: 'Cancel'}],
+			buttons: [{ value: 'Enregistrer' }, {value: 'Annuler'}],
 			success: function (result, values) {
-				if(result == 'register') {
+				if(result == 'Enregistrer') {
 					saveList = false, listChecked = new Array();  		
 					$(values).each(function (index, input) {
 						if(input.name == 'rememberMe') {

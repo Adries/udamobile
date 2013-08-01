@@ -2,7 +2,7 @@
 html, body {
 	height: 100% !important;
 	width: 100% !important;
-	background: url('images/background_home.png') repeat top center !important;
+	background: url('images/background.png') repeat top center !important;
 	font-family: Shanti !important;
 	margin: 0em !important;
 	padding: 0em !important;
@@ -147,7 +147,7 @@ li.noneResultMenu {
 }
 #Rname {
 	width: 100% !important;
-	background: url(./css/blackboard.jpg) no-repeat center center !important;
+	background: url(images/blackboard.jpg) no-repeat center center !important;
 }
 #Rname h3, #pdate, #restaurantAddress {
 	color: #FAFAFA !important;
@@ -200,61 +200,44 @@ small {
 #entConnexionErr, #entUsername, #entPassword {
 	color: #FAFAFA !important;
 }
-
-
-
-
-.rssBody a{
-	color:#636363 !important;
-	text-decoration: none !important;
-}
-.rssBody li{
-	border-radius: 0.6em 0.6em 0.6em 0.6em;
-	border: 2px #636363 !important;
-	background: #eeeadd;
-	color:#636363 !important;
-	text-align: left !important;
-	margins: 1px !important;	
-	list-style-type: none;	
-	list-style-image: url('right2.png') !important; 
-}
 .reset{
-	color: #67abca;
-	margin: 10;
+	color: #67ABCA !important;
+	margin: 10em !important;
+	padding: 0em !important;
 }
 .scrollable {
-   position:absolute;
-   overflow:hidden;
-   width: 100%;
-   top:0;
-   bottom:0; /* instead of height: 100%;*/
-   box-shadow: 0 0 20px purple;
-   /*  height:198px; */
-   z-index: 20;
+   position: absolute !important;
+   top: 0 !important;
+   bottom: 0 !important;
+   width: 100% !important;
+   box-shadow: 0 0 20px purple !important;
+   z-index: 20 !important;
+   overflow: hidden !important;
 }
 .scrollable .items {
-	width:100%;
-	position:absolute;
-	clear:both;
-	box-shadow: 0 0 30px green;
-}
-.items div {
-	float:left;
-	width:10%;
-	height:100%;
+	position:absolute ;
+	width: 100% !important;
+	clear: both !important;
+	box-shadow: 0 0 30px green !important;
 }
 .scrollable img {
-    float:left;
-    width:100%;
-   height: auto;
+   float: left !important;
+   height: auto !important;
+   width: 100% !important;
 }
 .scrollable .active {
-    border:2px solid #000;
-    position:relative;
-    cursor:default;
+    position: relative !important;
+    border: 2px solid #000000 !important;
+    cursor: default !important;
+}
+.items div {
+	float: left !important;
+	height: 100% !important;
+	width: 10% !important;
+	
 }
 .bottomIcon{
-	width: 80%;
+	width: 80% !important;
 }
 
 
@@ -462,8 +445,7 @@ a.ui-link-inherit {
 	background-repeat: no-repeat;
 }
 
-.ui-icon-nodisc .ui-icon,.ui-icon-nodisc .ui-icon-searchfield:after,.ui-icon-nodisc .ui-icon-alt .ui-icon,.ui-icon-nodisc .ui-icon-alt .ui-icon-searchfield:after
-	{
+.ui-icon-nodisc .ui-icon,.ui-icon-nodisc .ui-icon-searchfield:after,.ui-icon-nodisc .ui-icon-alt .ui-icon,.ui-icon-nodisc .ui-icon-alt .ui-icon-searchfield:after {
 	background-color: none;
 }
 

@@ -1,0 +1,61 @@
+.rssFeed {	
+	font-size: 90%;
+	margin: 2em 3em;
+}
+.rssHeader {
+	margin: 1em !important;
+	padding: 0em !important;
+	text-align: center !important;
+}
+.rssHeader a {
+	color: #FAFAFA !important;
+	font-size: 50 px !important;
+	text-shadow: none !important;
+	text-decoration: none !important;
+}
+.rssBody {
+	margin: 0em !important;
+	padding: 0em !important;
+	text-align: left !important;
+}
+.rssBody a {
+	color: #67ABCA !important;
+	text-shadow: none !important;
+	text-decoration: none !important;
+}
+.rssBody ul {
+	margin: 0em !important;
+	padding: 0em !important;
+}
+.rssBody li {
+	margin: 0em !important;
+	padding: 1em !important;
+	border: 1px solid #777777;
+	border-radius: 0.6em 0.6em 0.6em 0.6em !important;
+	color: #777777 !important;
+	background-color: #EEEADD !important;
+	list-style-type: none !important;	
+	background: url('images/actu_fleche.png') no-repeat top left;
+}
+.rssBody li h4 {
+	margin: 0em !important;
+	padding: 0em !important;
+	font-size: 1.1em !important;
+}
+.rssBody li div {
+	margin: 0em !important;
+	padding: 0em !important;
+	font-size: 100% !important;
+	font-style: italic !important
+}
+.rssBody li p {
+	margin: 1em 0em 0em 0em !important;
+	padding: 0em !important;
+}
+.odd { background-color: #e8e8fc !important; }
+.even { background-color: #d4d4e8 !important; }
+
+.rssMedia {
+	padding: 0.5em !important;
+	font-size: 1em !important;
+}
