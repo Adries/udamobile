@@ -230,6 +230,7 @@ function getLocation() {
 		autoClose: true
 	});
 	if (navigator.geolocation) {
+		alert(navigator.geolocation.lastPosition);
 		navigator.geolocation.getCurrentPosition(showPosition, showError);
 	}
 	else {
