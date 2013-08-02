@@ -230,7 +230,8 @@ function getLocation() {
 		autoClose: true
 	});
 	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition, showError, {timeout: 10000});
+		navigator.geolocation.clearWatch();
+		navigator.geolocation.getCurrentPosition(showPosition, showError);
 	}
 	else {
 		x.innerHTML = 'La géolocalisation n\'est pas supporté par le navigateur.';
