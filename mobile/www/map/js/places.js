@@ -232,7 +232,36 @@ function getLocation() {
 	});
 	if (navigator.geolocation) {
 		alert('getLocation : yes');
-		navigator.geolocation.getCurrentPosition(showPosition, showError);
+		navigator.geolocation.getCurrentPosition(function showPosition(position) {
+			alert('showPosition : ici');
+			a=2;
+			$('#backButton').attr('onclick', 'back_to_category(' + a + ')');
+			address = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+			latitude[1]= new google.maps.LatLng(position.coords.latitude);
+			longitude[1]= new google.maps.LatLng(position.coords.longitude);
+			initialize();
+			$('#listmapHeader').hide();
+			$('#listBuilding').hide();
+			$('#listIntoBuilding').hide();
+			$('#itineraireText').show();
+			$('#listMapHolder').show();
+		}, function showError(error) {
+			alert('showError : ici');
+			switch(error.code) {
+				case error.PERMISSION_DENIED:
+					x.innerHTML = 'Géolocalisation non authorisée.';
+					break;
+				case error.POSITION_UNAVAILABLE:
+					x.innerHTML = 'Localisation non disponible.';
+					break;
+				case error.TIMEOUT:
+					x.innerHTML = 'Echec de la localisation.';
+					break;
+				case error.UNKNOWN_ERROR:
+					x.innerHTML = 'Erreur inconnue.';
+					break;
+			}
+		});
 	}
 	else {
 		alert('getLocation : no');
@@ -249,8 +278,8 @@ function showPosition(position) {
 	a=2;
 	$('#backButton').attr('onclick', 'back_to_category(' + a + ')');
 	address = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-	latitude[1]=new google.maps.LatLng(position.coords.latitude);
-	longitude[1]=new google.maps.LatLng(position.coords.longitude);
+	latitude[1]= new google.maps.LatLng(position.coords.latitude);
+	longitude[1]= new google.maps.LatLng(position.coords.longitude);
 	initialize();
 	$('#listmapHeader').hide();
 	$('#listBuilding').hide();
