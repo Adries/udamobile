@@ -232,7 +232,11 @@ function getLocation() {
 	});
 	if (navigator.geolocation) {
 		alert('getLocation : yes');
-		navigator.geolocation.getCurrentPosition(showPosition, showError);
+		navigator.geolocation.getCurrentPosition(showPosition, showError, {
+			enableHighAccuracy : true,
+			maximumAge : 3000,
+			timeout : 60000
+		});
 	}
 	else {
 		alert('getLocation : no');

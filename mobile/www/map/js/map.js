@@ -33,7 +33,11 @@ function getLocation() {
 		autoClose: true
 	});
 	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition, showError);
+		navigator.geolocation.getCurrentPosition(showPosition, showError, {
+			enableHighAccuracy : true,
+			maximumAge : 3000,
+			timeout : 60000
+		});
 	}
 	else {
 		x.innerHTML = 'La géolocalisation n\'est pas supporté par le navigateur.';
