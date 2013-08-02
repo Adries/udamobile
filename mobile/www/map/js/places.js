@@ -221,7 +221,7 @@ function init_itineraire(latitude,longitude){
  * getLocation
  */
 function getLocation() {
-	alert('getLocation : ici');
+	/*alert('getLocation : ici');*/
 	$.msgBox({
 		title: 'Chargement...',
 		content: 'Chargement...',
@@ -245,7 +245,7 @@ function getLocation() {
  * @param position
  */
 function showPosition(position) {
-	alert('showPosition : ici');
+	/*alert('showPosition : ici');*/
 	a=2;
 	$('#backButton').attr('onclick', 'back_to_category(' + a + ')');
 	address = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
@@ -257,7 +257,7 @@ function showPosition(position) {
 	$('#listIntoBuilding').hide();
 	$('#itineraireText').show();
 	$('#listMapHolder').show();
-	alert('showPosition : la');
+	/*alert('showPosition : la');*/
 }
 
 /**
@@ -265,7 +265,7 @@ function showPosition(position) {
  * @param error
  */
 function showError(error) {
-	alert('showError : ' + error.code);
+	/*alert('showError : ' + error.code);*/
 	switch(error.code) {
 		case error.PERMISSION_DENIED:
 			x.innerHTML = 'Géolocalisation non authorisée.';
@@ -286,7 +286,7 @@ function showError(error) {
  * initialize
  */
 function initialize() {
-	alert('initialize : ici');
+	/*alert('initialize : ici');*/
 	
 	var directionsDisplay = new google.maps.DirectionsRenderer(),
 		directionsService = new google.maps.DirectionsService(),
@@ -317,7 +317,7 @@ function initialize() {
 	});
 	distance = google.maps.geometry.spherical.computeDistanceBetween (address, end); 
 	
-	alert('initialize : la');
+	/*alert('initialize : la');*/
 }
 
 /**

@@ -127,7 +127,7 @@ function makeList(json) {
 			for(i=0; i<nbelt;i++) {
 				html += '<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\"'
 						+ 'onclick=\"makeFicheMenu(\'' + escape(jsonResto[i].nom) + '\',\'' + escape(jsonResto[i].adresse) + '\',\'' + jsonResto[i].code_postal + '\',\'' + jsonResto[i].description + '\',\'' + jsonResto[i].latitude + '\',\'' + jsonResto[i].longitude + '\');menu(' + i + ')\">'
-						+ '<div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a href=\"#menuPage\" class=\"ui-link-inherit\" data-transition=\"slide\">'
+						+ '<div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a href=\"#menuPage\" class=\"ui-link-inherit\" data-transition=\"slide\" data-ajax=\"false\">'
 						+ '<img src=\"http://udamobile.u-clermont1.fr/v2/restaurant/img/' + jsonResto[i].id + '.jpg\"/>'
 						+ jsonResto[i].nom + '(' + jsonResto[i].etat + ')'
 						+ '</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"></span></div></li>';
