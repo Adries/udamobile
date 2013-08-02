@@ -232,7 +232,7 @@ function getLocation() {
 	});
 	if (navigator.geolocation) {
 		/*alert('getLocation : yes');*/
-		navigator.geolocation.getCurrentPosition(showPosition, showError, {maximumAge: Infinity, timeout: 5000});
+		navigator.geolocation.getCurrentPosition(showPosition, showError, { enableHighAccuracy: true });
 	}
 	else {
 		/*alert('getLocation : no');*/
@@ -245,7 +245,7 @@ function getLocation() {
  * @param position
  */
 function showPosition(position) {
-	/*alert('showPosition : ici');*/
+	alert('showPosition : ici');
 	a=2;
 	$('#backButton').attr('onclick', 'back_to_category(' + a + ')');
 	address = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
@@ -265,7 +265,7 @@ function showPosition(position) {
  * @param error
  */
 function showError(error) {
-	/*alert('showError : ' + error.code);*/
+	alert('showError : ' + error.code);
 	switch(error.code) {
 		case error.PERMISSION_DENIED:
 			x.innerHTML = 'Géolocalisation non authorisée.';
