@@ -232,11 +232,7 @@ function getLocation() {
 	});
 	if (navigator.geolocation) {
 		alert('getLocation : yes');
-		navigator.geolocation.getCurrentPosition(showPosition, showError, {
-			enableHighAccuracy : true,
-			maximumAge : 3000,
-			timeout : 60000
-		});
+		navigator.geolocation.getCurrentPosition(showPosition, showError);
 	}
 	else {
 		alert('getLocation : no');
@@ -268,6 +264,7 @@ function showPosition(position) {
  * @param error
  */
 function showError(error) {
+	alert('showError : ici');
 	switch(error.code) {
 		case error.PERMISSION_DENIED:
 			x.innerHTML = 'Géolocalisation non authorisée.';
