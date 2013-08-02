@@ -205,13 +205,14 @@ function back_to_category(a){
 
 /**
  * init_itineraire
- * @param lat
- * @param lan
+ * @param latitude
+ * @param longitude
  */
-function init_itineraire(lat,lan){
-	latitude[0]=lat;
-	longitude[0]=lan;
-	end = new google.maps.LatLng(lat,lan);
+function init_itineraire(latitude,longitude){
+	latitude[0]=latitude;
+	longitude[0]=longitude;
+	end = new google.maps.LatLng(latitude,longitude);
+	alert('init_itineraire : ' + latitude + '-' + longitude);
 	getLocation();
 }
 
@@ -219,18 +220,21 @@ function init_itineraire(lat,lan){
  * getLocation
  */
 function getLocation() {
+	alert('getLocation : ici');
 	$.msgBox({
 		title: 'Chargement...',
-		content: 'Chargement de l\'itineraire...',
+		content: 'Chargement...',
 		type: 'info',
-		opacity:0.9,
-		showButtons:false,
-		autoClose:true
+		opacity: 0.9,
+		showButtons: false,
+		autoClose: true
 	});
 	if (navigator.geolocation) {
+		alert('getLocation : yes');
 		navigator.geolocation.getCurrentPosition(showPosition, showError);
 	}
 	else {
+		alert('getLocation : no');
 		x.innerHTML = 'La géolocalisation n\'est pas supporté par le navigateur.';
 	}
 }
