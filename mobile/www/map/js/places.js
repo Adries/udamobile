@@ -213,7 +213,6 @@ function init_itineraire(latitude,longitude){
 	latitude[0]=latitude;
 	longitude[0]=longitude;
 	end = new google.maps.LatLng(latitude,longitude);
-	alert('init_itineraire : ' + latitude + '-' + longitude);
 	getLocation();
 }
 
@@ -221,7 +220,7 @@ function init_itineraire(latitude,longitude){
  * getLocation
  */
 function getLocation() {
-	/*alert('getLocation : ici');*/
+	alert('getLocation : ici');
 	$.msgBox({
 		title: 'Chargement...',
 		content: 'Chargement...',
@@ -231,11 +230,9 @@ function getLocation() {
 		autoClose: true
 	});
 	if (navigator.geolocation) {
-		/*alert('getLocation : yes');*/
-		navigator.geolocation.getCurrentPosition(showPosition, showError, { enableHighAccuracy: true });
+		navigator.geolocation.getCurrentPosition(showPosition, showError, {maximumAge : 0});
 	}
 	else {
-		/*alert('getLocation : no');*/
 		x.innerHTML = 'La géolocalisation n\'est pas supporté par le navigateur.';
 	}
 }
@@ -257,7 +254,6 @@ function showPosition(position) {
 	$('#listIntoBuilding').hide();
 	$('#itineraireText').show();
 	$('#listMapHolder').show();
-	/*alert('showPosition : la');*/
 }
 
 /**
@@ -286,8 +282,6 @@ function showError(error) {
  * initialize
  */
 function initialize() {
-	/*alert('initialize : ici');*/
-	
 	var directionsDisplay = new google.maps.DirectionsRenderer(),
 		directionsService = new google.maps.DirectionsService(),
 		requeteItineraire = {
@@ -316,8 +310,6 @@ function initialize() {
 		}
 	});
 	distance = google.maps.geometry.spherical.computeDistanceBetween (address, end); 
-	
-	/*alert('initialize : la');*/
 }
 
 /**
