@@ -28,9 +28,9 @@ function getLocation() {
 		title: 'Chargement...',
 		content: 'Chargement de l\'itineraire...',
 		type: 'info',
-		opacity:0.9,
-		showButtons:false,
-		autoClose:true
+		opacity: 0.9,
+		showButtons: false,
+		autoClose: true
 	});
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(showPosition, showError);

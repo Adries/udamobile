@@ -166,7 +166,8 @@ function listbuildings(list){
 			};
 		break;
 	}
-
+	
+	html += '<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" onclick=\"showAll();\"><div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a href=\"#menupage\" class=\"ui-link-inherit\" data-transition=\"slide\">Affichez tout</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"></span></div></li>';
 	for(var i in places){
 		html += '<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\"' + 'onclick=\"init_itineraire(' + places[i][0]+ ','+ places[i][1] + ');\">' + '<div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a href=\"#menupage\" class=\"ui-link-inherit\" data-transition=\"slide\">' + i + '</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"></span></div></li>';
 		counter++;
@@ -244,8 +245,9 @@ function getLocation() {
  * @param position
  */
 function showPosition(position) {
+	alert('showPosition : ici');
 	a=2;
-	$('#backButton').attr('onclick', 'back_to_category('+a+')');
+	$('#backButton').attr('onclick', 'back_to_category(' + a + ')');
 	address = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
 	latitude[1]=new google.maps.LatLng(position.coords.latitude);
 	longitude[1]=new google.maps.LatLng(position.coords.longitude);
