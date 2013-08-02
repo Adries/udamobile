@@ -249,14 +249,15 @@ function showPosition(position) {
 	a=2;
 	$('#backButton').attr('onclick', 'back_to_category(' + a + ')');
 	address = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-	latitude[1]= new google.maps.LatLng(position.coords.latitude);
-	longitude[1]= new google.maps.LatLng(position.coords.longitude);
+	latitude[1] = new google.maps.LatLng(position.coords.latitude);
+	longitude[1] = new google.maps.LatLng(position.coords.longitude);
 	initialize();
 	$('#listmapHeader').hide();
 	$('#listBuilding').hide();
 	$('#listIntoBuilding').hide();
 	$('#itineraireText').show();
 	$('#listMapHolder').show();
+	alert('showPosition : la');
 }
 
 /**
@@ -285,6 +286,8 @@ function showError(error) {
  * initialize
  */
 function initialize() {
+	alert('initialize : ici');
+	
 	var directionsDisplay = new google.maps.DirectionsRenderer(),
 		directionsService = new google.maps.DirectionsService(),
 		requeteItineraire = {
@@ -313,6 +316,8 @@ function initialize() {
 		}
 	});
 	distance = google.maps.geometry.spherical.computeDistanceBetween (address, end); 
+	
+	alert('initialize : la');
 }
 
 /**
