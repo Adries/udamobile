@@ -231,7 +231,7 @@ function initialize() {
 			mapition: google.maps.ControlPosition.TOP_LEFT
 		}
 	};
-	map = new google.maps.Map(document.getElementById('geolocalMapHolder'), mapOptions);
+	map = new google.maps.Map(document.getElementById('listMapHolder'), mapOptions);
 	google.maps.event.trigger(map, 'resize');
 }
 
