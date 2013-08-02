@@ -221,6 +221,7 @@ function init_itineraire(latitude, longitude){
  * initialize
  */
 function initialize() {
+	alert('initialize : ici');
 	address = new google.maps.LatLng(latitude[0], longitude[0]);
 	mapOptions = {
 		zoom: 17,
@@ -249,7 +250,7 @@ function getLocation() {
 		autoClose: true
 	});
 	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition, showError, {maximumAge : 0});
+		navigator.geolocation.getCurrentPosition(showPosition, showError);
 	}
 	else {
 		x.innerHTML = 'La géolocalisation n\'est pas supporté par le navigateur.';
