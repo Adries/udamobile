@@ -26,18 +26,14 @@ function initialize() {
 function getLocation() {
 	$.msgBox({
 		title: 'Chargement...',
-		content: 'Chargement de l\'itineraire...',
+		content: 'Chargement...',
 		type: 'info',
 		opacity: 0.9,
 		showButtons: false,
 		autoClose: true
 	});
 	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition, showError, {
-			enableHighAccuracy : true,
-			maximumAge : 3000,
-			timeout : 60000
-		});
+		navigator.geolocation.getCurrentPosition(showPosition, showError);
 	}
 	else {
 		x.innerHTML = 'La géolocalisation n\'est pas supporté par le navigateur.';
