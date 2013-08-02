@@ -169,7 +169,7 @@ function listbuildings(list){
 	
 	html += '<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" onclick=\"showAll();\"><div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a href=\"#menupage\" class=\"ui-link-inherit\" data-transition=\"slide\">Affichez tout</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"></span></div></li>';
 	for(var i in places){
-		html += '<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\"' + 'onclick=\"init_itineraire(' + places[i][0]+ ','+ places[i][1] + ');\">' + '<div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a href=\"#menupage\" class=\"ui-link-inherit\" data-transition=\"slide\">' + i + '</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"></span></div></li>';
+		html += '<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\"' + 'onclick=\"init_itineraire(' + places[i][0]+ ','+ places[i][1] + ');\">' + '<div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\" data-transition=\"slide\" data-ajax=\"false\">' + i + '</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"></span></div></li>';
 		counter++;
 	}
 	$('#listIntoBuilding').html(html);
@@ -232,7 +232,7 @@ function getLocation() {
 	});
 	if (navigator.geolocation) {
 		alert('getLocation : yes');
-		navigator.geolocation.getCurrentPosition(showPosition, showError, {maximumAge: Infinity, timeout: 5000, enableHighAccuracy: true});
+		navigator.geolocation.getCurrentPosition(showPosition, showError);
 	}
 	else {
 		alert('getLocation : no');
