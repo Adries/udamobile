@@ -46,7 +46,6 @@ function getLocation() {
  * @param position
  */
 function showPosition(position) {
-	alert('showPosition MAP : ici');
 	address = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
 	mapOptions = {
 		zoom: 17,
