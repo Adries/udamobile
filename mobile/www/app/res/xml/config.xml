@@ -37,12 +37,11 @@
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
     
-	<plugin name="Geolocation" value="CDVLocation" />
-	<plugin name="InAppBrowser" value="CDVInAppBrowser" />
-	<plugin name="InAppBrowser" />
-	<plugin name="Notification" value="CDVNotification" />
-	<plugin name="PushPlugin" value="com.plugin.gcm.PushPlugin" />
-	<plugin name="PushPlugin" value="PushPlugin" />
+	<plugin name="Geolocation" value="org.apache.cordova.GeoBroker" />
+	<plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
+	<plugin name="Notification" value="org.apache.cordova.Notification"/>
+	
+
  
     <icon src="icon.png" />
     
