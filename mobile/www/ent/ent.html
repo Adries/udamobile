@@ -12,6 +12,7 @@
 		<script type="text/javascript">
 			$(document).bind('mobileinit', function(){
 				$.mobile.allowCrossDomainPages = true;
+				$.mobile.page.prototype.options.domCache = true;
 			});
 			
 			document.addEventListener("deviceready", onDeviceReady, false);
