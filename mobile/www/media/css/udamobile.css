@@ -1,8 +1,14 @@
 html,body {
   height: 100%!important;
   width: 100%!important;
-  background: url(images/background.png) repeat top center!important;
+  background: url(../images/background.png) repeat top center!important;
   font-family: Shanti!important;
+  margin: 0!important;
+  padding: 0!important
+}
+#mainPage, #restoPage, #menuPage, #actualitePage, #annuairePage, #mapPage, #listemapPage { 
+  height: 100%!important;
+  width: 100%!important;
   margin: 0!important;
   padding: 0!important
 }
@@ -31,7 +37,7 @@ html,body {
   padding: 0!important
 }
 #page_footer {
-  background: url(images/footer.png) no-repeat center bottom!important;
+  background: url(../images/footer.png) no-repeat center bottom!important;
   margin: 0!important;
   padding: 0!important;
   text-align: center!important
@@ -112,6 +118,7 @@ li.resultAnnuaire {
   border: 0!important
 }
 #annuaireContent,#restaurantContent,#geolocalContent,#listmapContent,#entContent,#actualiteContent,#agendaContent {
+  height: 100% !important;
   width: 100%!important;
   margin: 0!important;
   padding: 0!important;
@@ -172,10 +179,12 @@ li.noneResultMenu {
   color: #FAFAFA
 }
 #geolocalMapHolder,#listMapHolder,#restaurantMapHolder {
-  margin: 1em!important;
-  padding: 0!important;
-  height: 50%!important;
-  color: #000!important
+  position: relative !important;
+  height: 50% !important;
+  width: 100% !important;
+  margin: 1em !important;
+  padding: 0 !important;
+  color: #000 !important
 }
 #geolocalSearchTextField {
   color: #67ABCA!important;
@@ -330,7 +339,7 @@ small {
 }
 .ui-btn-down-a {
   border: 1px solid #bbb;
-  background-image: url(images/footer.jpg);
+  background-image: url(../images/footer.jpg);
   background-repeat: repeat-x,repeat-y;
   font-weight: 700;
   color: #2f3e46;
@@ -392,10 +401,10 @@ a.ui-link-inherit {
   pointer-events: none
 }
 .ui-icon,.ui-icon-searchfield: after {
-  background-image: url(images/footer.jpg);
+  background-image: url(../images/footer.jpg);
   background-repeat: repeat-x,repeat-y;
   background-color: rgba(0,0,0,.4);
-  background-image: url(images/icons-18-white.png);
+  background-image: url(../images/icons-18-white.png);
   background-repeat: no-repeat;
   -webkit-border-radius: 9px;
   border-radius: 9px
@@ -403,7 +412,7 @@ a.ui-link-inherit {
 .ui-icon-alt .ui-icon,.ui-icon-alt .ui-icon-searchfield: after {
   background-color: #000;
   background-color: rgba(255,255,255,.3);
-  background-image: url(images/icons-18-black.png);
+  background-image: url(../images/icons-18-black.png);
   background-repeat: no-repeat
 }
 .ui-icon-nodisc .ui-icon,.ui-icon-nodisc .ui-icon-searchfield: after,.ui-icon-nodisc .ui-icon-alt .ui-icon,.ui-icon-nodisc .ui-icon-alt .ui-icon-searchfield: after {
@@ -483,14 +492,14 @@ a.ui-link-inherit {
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3),only screen and (min--moz-device-pixel-ratio: 1.3),only screen and (min-resolution: 200dpi) {
   .ui-icon-plus,.ui-icon-minus,.ui-icon-delete,.ui-icon-arrow-r,.ui-icon-arrow-l,.ui-icon-arrow-u,.ui-icon-arrow-d,.ui-icon-check,.ui-icon-gear,.ui-icon-refresh,.ui-icon-forward,.ui-icon-back,.ui-icon-grid,.ui-icon-star,.ui-icon-alert,.ui-icon-info,.ui-icon-home,.ui-icon-bars,.ui-icon-edit,.ui-icon-search,.ui-icon-searchfield: after,.ui-icon-checkbox-off,.ui-icon-checkbox-on,.ui-icon-radio-off,.ui-icon-radio-on {
-  background-image: url(images/icons-36-white.png);
+  background-image: url(../images/icons-36-white.png);
   -moz-background-size: 864px 18px;
   -o-background-size: 864px 18px;
   -webkit-background-size: 864px 18px;
   background-size: 864px 18px
 }
 .ui-icon-alt .ui-icon {
-  background-image: url(images/icons-36-black.png)
+  background-image: url(../images/icons-36-black.png)
 }
 .ui-icon-plus {
   background-position: 0 50%
@@ -577,7 +586,7 @@ a.ui-link-inherit {
   background-color: #fafafa
 }
 .ui-icon-loading {
-  background: url(images/ajax-loader.gif);
+  background: url(../images/ajax-loader.gif);
   background-size: 46px 46px
 }
 .ui-btn-corner-all {
@@ -634,10 +643,6 @@ a.ui-link-inherit {
   margin: 0;
   padding: 0
 }
-@media print {
-  html,body {
-  height: auto
-}
 .rssFeed {
   font-size: 90%!important;
   margin: 2em!important
@@ -671,7 +676,7 @@ a.ui-link-inherit {
   margin: 0!important;
   padding: 0 0 0 3em!important;
   list-style-type: none!important;
-  background: url(themes/images/actu_fleche.png) no-repeat left center!important
+  background: url(../images/actu_fleche.png) no-repeat left center!important
 }
 .rssContent {
   margin: 0!important;
