@@ -7,10 +7,10 @@
     	
     	<title>UdAMobile</title>
     	
-    	<link rel="stylesheet" type="text/css" href="media/css/jquery.mobile.min.css" />
-    	<link rel="stylesheet" type="text/css" href="media/css/udamobile.css" />
+    	<link rel="stylesheet" type="text/css" href="media/jquery.mobile-1.3.2.min.css" />
+    	<link rel="stylesheet" type="text/css" href="media/udamobile.css" />
     	
-    	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     
     	<script type="text/javascript">
 	      	$(document).bind('mobileinit', function(){
@@ -19,7 +19,7 @@
 	      	});
     	</script>
     
-    	<script type="text/javascript" src="js/jquery.mobile-1.3.0.min.js"></script>
+    	<script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
     	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=geometry,places&amp;sensor=true"></script>
     	<script type="text/javascript" src="js/zrssfeed.min.js"></script>
     	<script type="text/javascript" src="js/msgBox.min.js"></script>    	
@@ -51,7 +51,7 @@
 	        	<a href="./agenda/agenda.html" data-transition="slide" >
 	 	         	<img src="media/icons/280x280_agenda.png"/>
 	    	    </a>
-		        <a href="./ent/ent.html" data-transition="slide" >
+		        <a href="#entPage" data-transition="slide" >
 		          	<img src="media/icons/280x280_emploidutemps.png"/>
 	        	</a>
 			</div>
@@ -115,9 +115,9 @@
       		<div id="page_footer" data-role="footer" data-position="fixed">
 		        <table>
         			<tr>
-            			<td>
-              				<a href="#restoPage" data-transition="slide" >
-                				<img class="bottomIcon" src="media/icons/140x140_restauration.png"/>
+        				<td>
+              				<a href="#mapPage" onclick="initialize_map();" data-transition="slide" >
+                				<img class="bottomIcon" src="media/icons/140x140_carte.png"/>
               				</a>
             			</td>
             			<td>
@@ -126,17 +126,17 @@
               				</a>
             			</td>
             			<td>
-              				<a href="#mapPage" data-transition="slide" >
-                				<img class="bottomIcon" src="media/icons/140x140_carte.png"/>
+              				<a href="#annuairePage" data-transition="slide" >
+                				<img class="bottomIcon" src="media/icons/140x140_annuaire.png"/>
               				</a>
-            			</td>
+            			</td>            			
             			<td>
               				<a href="../agenda/agenda.html" >
                 				<img class="bottomIcon" src="media/icons/140x140_agenda.png"/>
               				</a>
             			</td>
             			<td>
-              				<a href="../ent/ent.html" data-transition="slide" >
+              				<a href="#entPage" data-transition="slide" >
                 				<img class="bottomIcon" src="media/icons/140x140_emploidutemps.png"/>
               				</a>
             			</td>
@@ -185,6 +185,7 @@
 	            		</td>
 	          		</tr>
 	        	</table>
+	        	<a onclick="$('#restaurantMapHolder').show();$('#restaurantAddressText').show();" data-transition="slide"><img src="media/images/itineraire.jpg"/></a>
 	        	<div id="restaurantAddress"></div>
 	        	<div id="restaurantAddressText"></div>
 	        	<div id="restaurantMapHolder"></div>
@@ -193,28 +194,28 @@
 	      	<div id="page_footer" data-role="footer" data-position="fixed">
 		        <table>
         			<tr>
-            			<td>
-              				<a href="#restoPage" data-transition="slide" >
-                				<img class="bottomIcon" src="media/icons/140x140_restauration.png"/>
+        				<td>
+              				<a href="#mapPage" onclick="initialize_map();" data-transition="slide" >
+                				<img class="bottomIcon" src="media/icons/140x140_carte.png"/>
               				</a>
             			</td>
             			<td>
-              				<a href="#actualitePage" data-transition="slide" >
+              				<a href="#actualitePage" onclick="initialize_actualite()" data-transition="slide" >
                 				<img class="bottomIcon" src="media/icons/140x140_actualites.png"/>
               				</a>
             			</td>
             			<td>
-              				<a href="#mapPage" data-transition="slide" >
-                				<img class="bottomIcon" src="media/icons/140x140_carte.png"/>
+              				<a href="#annuairePage" data-transition="slide" >
+                				<img class="bottomIcon" src="media/icons/140x140_annuaire.png"/>
               				</a>
-            			</td>
+            			</td>            			
             			<td>
               				<a href="../agenda/agenda.html" >
                 				<img class="bottomIcon" src="media/icons/140x140_agenda.png"/>
               				</a>
             			</td>
             			<td>
-              				<a href="../ent/ent.html" data-transition="slide" >
+              				<a href="#entPage" data-transition="slide" >
                 				<img class="bottomIcon" src="media/icons/140x140_emploidutemps.png"/>
               				</a>
             			</td>
@@ -247,38 +248,38 @@
 	      		<div class="icon">
 	          		<img src="media/icons/280x280_actualites.png" width="30%"/>
 	        	</div>
-	        	<a onclick="localStorage.clear();saveList = false;location.reload();" data-role="button" class="reset">Modification des listes</a>
-	        	<div class="annuaire" id="uda"></div>
-	        	<div class="annuaire" id="info"></div>
-	        	<div class="annuaire" id="breves"></div>
-	        	<div class="annuaire" id="evenements"></div>
+	        	<a id="resetActualite" onclick="reload_actualite();" data-role="button" class="reset">Modification des listes</a>
+	        	<div id="uda"></div>
+	        	<div id="info"></div>
+	        	<div id="breves"></div>
+	        	<div id="evenements"></div>
 			</div>
 	      	<!-- actu FOOTER -->
 	     	<div id="page_footer" data-role="footer" data-position="fixed">
 		        <table>
         			<tr>
-            			<td>
-              				<a href="#restoPage" data-transition="slide" >
-                				<img class="bottomIcon" src="media/icons/140x140_restauration.png"/>
-              				</a>
-            			</td>
-            			<td>
-              				<a href="#actualitePage" data-transition="slide" >
-                				<img class="bottomIcon" src="media/icons/140x140_actualites.png"/>
-              				</a>
-            			</td>
-            			<td>
-              				<a href="#mapPage" data-transition="slide" >
+        				<td>
+              				<a href="#mapPage" onclick="initialize_map();" data-transition="slide" >
                 				<img class="bottomIcon" src="media/icons/140x140_carte.png"/>
               				</a>
             			</td>
+            			<td>
+              				<a href="#restoPage" onclick="initialize_menu();" data-transition="slide" >
+                				<img class="bottomIcon" src="media/icons/140x140_restauration.png"/>
+              				</a>
+            			</td>            			
+            			<td>
+              				<a href="#annuairePage" data-transition="slide" >
+                				<img class="bottomIcon" src="media/icons/140x140_annuaire.png"/>
+              				</a>
+            			</td>   
             			<td>
               				<a href="../agenda/agenda.html" >
                 				<img class="bottomIcon" src="media/icons/140x140_agenda.png"/>
               				</a>
             			</td>
             			<td>
-              				<a href="../ent/ent.html" data-transition="slide" >
+              				<a href="#entPage" data-transition="slide" >
                 				<img class="bottomIcon" src="media/icons/140x140_emploidutemps.png"/>
               				</a>
             			</td>
@@ -325,19 +326,19 @@
 	     	<div id="page_footer" data-role="footer" data-position="fixed">
 		        <table>
         			<tr>
+        				<td>
+              				<a href="#mapPage" onclick="initialize_map();" data-transition="slide" >
+                				<img class="bottomIcon" src="media/icons/140x140_carte.png"/>
+              				</a>
+            			</td>
             			<td>
-              				<a href="#restoPage" data-transition="slide" >
+              				<a href="#restoPage" onclick="initialize_menu();" data-transition="slide" >
                 				<img class="bottomIcon" src="media/icons/140x140_restauration.png"/>
               				</a>
             			</td>
             			<td>
-              				<a href="#actualitePage" data-transition="slide" >
+              				<a href="#actualitePage" onclick="initialize_actualite()" data-transition="slide" >
                 				<img class="bottomIcon" src="media/icons/140x140_actualites.png"/>
-              				</a>
-            			</td>
-            			<td>
-              				<a href="#mapPage" data-transition="slide" >
-                				<img class="bottomIcon" src="media/icons/140x140_carte.png"/>
               				</a>
             			</td>
             			<td>
@@ -346,7 +347,7 @@
               				</a>
             			</td>
             			<td>
-              				<a href="../ent/ent.html" data-transition="slide" >
+              				<a href="#entPage" data-transition="slide" >
                 				<img class="bottomIcon" src="media/icons/140x140_emploidutemps.png"/>
               				</a>
             			</td>
@@ -367,7 +368,7 @@
 							</a>
 	            		</li>
 	            		<li>
-	              			<a href="#listemapPage" data-transition="slide" >
+	              			<a href="#listemapPage" onclick="initialize_listemap();" data-transition="slide" >
 	                			<img src="media/icons/iconPoi.png"/>
 							</a>
 	            		</li>
@@ -392,18 +393,18 @@
 		        <table>
         			<tr>
             			<td>
-              				<a href="#restoPage" data-transition="slide" >
+              				<a href="#restoPage" onclick="initialize_menu();" data-transition="slide" >
                 				<img class="bottomIcon" src="media/icons/140x140_restauration.png"/>
               				</a>
             			</td>
             			<td>
-              				<a href="#actualitePage" data-transition="slide" >
+              				<a href="#actualitePage" onclick="initialize_actualite()" data-transition="slide" >
                 				<img class="bottomIcon" src="media/icons/140x140_actualites.png"/>
               				</a>
             			</td>
             			<td>
-              				<a href="#mapPage" data-transition="slide" >
-                				<img class="bottomIcon" src="media/icons/140x140_carte.png"/>
+              				<a href="#annuairePage" data-transition="slide" >
+                				<img class="bottomIcon" src="media/icons/140x140_annuaire.png"/>
               				</a>
             			</td>
             			<td>
@@ -412,7 +413,7 @@
               				</a>
             			</td>
             			<td>
-              				<a href="../ent/ent.html" data-transition="slide" >
+              				<a href="#entPage" data-transition="slide" >
                 				<img class="bottomIcon" src="media/icons/140x140_emploidutemps.png"/>
               				</a>
             			</td>
@@ -428,7 +429,7 @@
 		        <div data-role="navbar">
 					<ul>
 	            		<li>
-	              			<a href="#mainPage" onclick="initialize_listemap();" data-transition="slide" >
+	              			<a href="#mainPage" data-transition="slide" >
 	                			<img src="media/icons/home.png" />
 							</a>
 	            		</li>
@@ -445,7 +446,7 @@
 	        	<div id="listmapHeader">
 	          		<div class="icon">
 	            		<img src="media/icons/280x280_carte.png"  width="30%"/>
-	            		<p>Liste des batiments universitaire :</p>
+	            		<p>Liste des batiments universitaires :</p>
 	          		</div>
 	        	</div>
 	        	<ul id="listBuilding" data-role="listview" data-inset="true">
@@ -480,18 +481,18 @@
 		        <table>
         			<tr>
             			<td>
-              				<a href="#restoPage" data-transition="slide" >
+              				<a href="#restoPage" onclick="initialize_menu();" data-transition="slide" >
                 				<img class="bottomIcon" src="media/icons/140x140_restauration.png"/>
               				</a>
             			</td>
             			<td>
-              				<a href="#actualitePage" data-transition="slide" >
+              				<a href="#actualitePage" onclick="initialize_actualite()" data-transition="slide" >
                 				<img class="bottomIcon" src="media/icons/140x140_actualites.png"/>
               				</a>
             			</td>
             			<td>
-              				<a href="#mapPage" data-transition="slide" >
-                				<img class="bottomIcon" src="media/icons/140x140_carte.png"/>
+              				<a href="#annuairePage" data-transition="slide" >
+                				<img class="bottomIcon" src="media/icons/140x140_annuaire.png"/>
               				</a>
             			</td>
             			<td>
@@ -500,7 +501,7 @@
               				</a>
             			</td>
             			<td>
-              				<a href="../ent/ent.html" data-transition="slide" >
+              				<a href="#entPage" data-transition="slide" >
                 				<img class="bottomIcon" src="media/icons/140x140_emploidutemps.png"/>
               				</a>
             			</td>
@@ -508,6 +509,63 @@
         		</table>
       		</div>
 	    </div>
+	    
+	     <!--ENT PAGE -->
+	    <div id="entPage" data-role="page" data-theme="a">
+			<!--actu HEADER -->
+	      	<div id="uda_header" data-role="header">
+	        	<div data-role="navbar">
+	          		<ul>
+			            <li>
+							<a href="#mainPage" data-transition="slide">
+			    	            <img src="media/icons/home.png"/>
+							</a>
+	            		</li>
+	            		<li>
+	              			<a data-rel="back" data-direction="reverse">
+	                			<img src="media/icons/back.png"/>
+							</a>
+	            		</li>
+	          		</ul>
+	       		</div>
+	      	</div>
+	      	<!-- ent CONTENT -->
+			<div id="entContent" data-role="content">
+				<iframe id="entIframe" src="https://cas.u-clermont1.fr/cas/login?service=http://ent.u-clermont1.fr/Login" frameborder="0" scrolling="no"></iframe>
+			</div>
+	      	<!-- ent FOOTER -->
+	     	<div id="page_footer" data-role="footer" data-position="fixed">
+		        <table>
+        			<tr>
+        				<td>
+              				<a href="#mapPage" onclick="initialize_map();" data-transition="slide" >
+                				<img class="bottomIcon" src="media/icons/140x140_carte.png"/>
+              				</a>
+            			</td>
+            			<td>
+              				<a href="#restoPage" onclick="initialize_menu();" data-transition="slide" >
+                				<img class="bottomIcon" src="media/icons/140x140_restauration.png"/>
+              				</a>
+            			</td>
+            			<td>
+              				<a href="#actualitePage" onclick="initialize_actualite()" data-transition="slide" >
+                				<img class="bottomIcon" src="media/icons/140x140_actualites.png"/>
+              				</a>
+            			</td>
+            			<td>
+              				<a href="#annuairePage" data-transition="slide" >
+                				<img class="bottomIcon" src="media/icons/140x140_annuaire.png"/>
+              				</a>
+            			</td> 
+            			<td>
+              				<a href="../agenda/agenda.html" >
+                				<img class="bottomIcon" src="media/icons/140x140_agenda.png"/>
+              				</a>
+            			</td>
+          			</tr>
+        		</table>
+      		</div>
+		</div>
 	
 	    <script type="text/javascript" src="cordova.js"></script>
 	</body>

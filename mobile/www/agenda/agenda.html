@@ -5,18 +5,21 @@
 		
 		<title>Agenda</title>
 		
-		<link rel="stylesheet" href="../common/css/jquery.mobile.min.css" />
-		<link rel="stylesheet" href="../common/css/themes/uda.min.css" />
+		<link rel="stylesheet" type="text/css" href="../media/jquery.mobile-1.3.2.min.css" />
+    	<link rel="stylesheet" type="text/css" href="../media/udamobile.css" />
 		
-		<script type="text/javascript" src="../common/js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript">
 			$(document).bind('mobileinit', function(){
 				$.mobile.allowCrossDomainPages = true;
 				$.mobile.page.prototype.options.domCache = true;
 			});
 		</script>
-		<script type="text/javascript" src="../common/js/jquery.mobile-1.3.0.min.js"></script>
-		<script type="text/javascript" src="js/ent.js"></script>
+		<script type="text/javascript" src="../js/jquery.mobile-1.3.2.min.js"></script>
+    	<script type="text/javascript" src="../js/zrssfeed.min.js"></script>
+    	<script type="text/javascript" src="../js/msgBox.min.js"></script>    	
+    	<script type="text/javascript" src="../js/udamobile.js"></script>
+    	<script type="text/javascript" src="js/ent.js"></script>
 	</head>
 	<body>
 		<!-- MAIN PAGE -->
@@ -26,13 +29,13 @@
 				<div data-role="navbar">
 					<ul>
 						<li>
-							<a data-role="button" ontouchstart="window.location='../main.html';" data-transition="slide" data-ajax="false">
-								<img src="../common/css/themes/icons/home.png">
+							<a data-role="button" ontouchstart="window.location='../main.html#mainPage';" data-transition="slide" data-ajax="false">
+								<img src="../media/icons/home.png" />
 							</a>
 						</li>	
 						<li>
-							<a data-role="button" ontouchstart="window.location='../main.html';" data-transition="slide" data-ajax="false">
-								<img src="../common/css/themes/icons/back.png" >
+							<a data-rel="back" data-direction="reverse">
+								<img src="../media/icons/back.png" >
 							</a>
 						</li>
 					</ul>
@@ -41,49 +44,51 @@
 			<!--  CONTENT -->
 			<div id="agendaContent" data-role="content">
 				<div class="icon">
-					<img src="../common/css/themes/icons/280x280_agenda.png" width="30%"/>
+					<img src="../media/icons//280x280_agenda.png" width="30%"/>
 				</div>
 				<form method="POST" id="entConnexion" action="http://udamobile.u-clermont1.fr/v2/connexion/index.php">
 					<div id="entConnexionErr"></div>
 					<label for="entUsername">Login : </label>
-					<input type="text" data-clear-btn="true" name="entUsername" id="entUsername" value="">
+					<input type="text" name="entUsername" id="entUsername" value="">
 					<label for="entPassword">Password : </label>
-					<input type="password" data-clear-btn="true" name="entPassword" id="entPassword" value="" autocomplete="off">
+					<input type="password" name="entPassword" id="entPassword" value="" autocomplete="off">
 					<a data-role="button" class="reset" id="search" data-transition="slide" onclick="init()" data-ajax="false">Connexion</a>
 				</form>
 			</div>
 			<!-- FOOTER -->
 			<div id="page_footer" data-role="footer" data-position="fixed">
-				<table>
-					<tr>
-						<td>
-							<a href="../restaurant/restaurant.html" data-transition="slide" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/themes/icons/140x140_restauration.png"/>
-							</a>
-						</td>
-						<td>
-							<a href="../actualite/actualite.html" data-transition="slide" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/themes/icons/140x140_actualites.png"/>
-							</a>
-						</td>
-						<td>
-							<a href="../map/map.html" data-transition="slide" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/themes/icons/140x140_carte.png"/>
-							</a>
-						</td>	
-						<td>
-							<a href="../agenda/agenda.html" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/themes/icons/140x140_agenda.png"/>
-							</a>
-						</td>
-						<td>
-							<a href="../ent/ent.html" data-transition="slide" data-ajax="false">
-								<img class="bottomIcon" src="../common/css/themes/icons/140x140_emploidutemps.png"/>
-							</a>
-						</td>	
-					</tr>
-				</table>
-			</div>
+		        <table>
+        			<tr>
+        				<td>
+              				<a href="../index.html/#mapPage" onclick="initialize_map();" data-transition="slide" >
+                				<img class="bottomIcon" src="../media/icons/140x140_carte.png"/>
+              				</a>
+            			</td>
+            			<td>
+              				<a href="../index.html/#restoPage" onclick="initialize_menu();" data-transition="slide" >
+                				<img class="bottomIcon" src="../media/icons/140x140_restauration.png"/>
+              				</a>
+            			</td>
+            			<td>
+              				<a href="../index.html/#actualitePage" onclick="initialize_actualite()" data-transition="slide" >
+                				<img class="bottomIcon" src="../media/icons/140x140_actualites.png"/>
+              				</a>
+            			</td>
+            			<td>
+              				<a href="../index.html/#annuairePage" data-transition="slide" >
+                				<img class="bottomIcon" src="media/icons/140x140_annuaire.png"/>
+              				</a>
+            			</td> 
+            			<td>
+              				<a href="../index.html/#entPage" data-transition="slide" >
+                				<img class="bottomIcon" src="../media/icons/140x140_emploidutemps.png"/>
+              				</a>
+            			</td>
+          			</tr>
+        		</table>
+      		</div>
 		</div>
+		
+		<script type="text/javascript" src="../cordova.js"></script>
 	</body>
 </html>

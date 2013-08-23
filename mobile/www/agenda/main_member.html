@@ -4,23 +4,29 @@
 		<title>ENT Mobile</title>
 		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1,  maximum-scale=1"/> 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-
-		<link rel="stylesheet" href="../common/css/jquery.mobile.structure-1.3.1.min.css" /> 
-		<link rel="stylesheet" href="../common/css/themes/blanc.min.css" />
-
-		<script src="../common/js/jquery-1.9.1.min.js"></script>
+		
+		<title>Agenda</title>
+		
+		<link rel="stylesheet" type="text/css" href="../media/jquery.mobile-1.3.2.min.css" />
+    	<link rel="stylesheet" type="text/css" href="../media/udamobile.css" />
+		
+		<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript">
 			$(document).bind('mobileinit', function(){
 				$.mobile.allowCrossDomainPages = true;
 				$.mobile.page.prototype.options.domCache = true;
 			});
 		</script>
-		<script src="../common/js/jquery.mobile-1.3.0.js"></script>
+		<script type="text/javascript" src="../js/jquery.mobile-1.3.2.min.js"></script>
+    	<script type="text/javascript" src="../js/zrssfeed.min.js"></script>
+    	<script type="text/javascript" src="../js/msgBox.min.js"></script>    	
+    	<script type="text/javascript" src="../js/udamobile.js"></script>
+    	<script type="text/javascript" src="js/ent.js"></script>
 	</head> 
 	<body> 
 		<div class="mainPage" id="mainPage" data-role="page" data-theme="a" >
 			<div id="uda_header" data-role="header" data-position="fixed"  >
-				<img src="../common/css/themes/images/header.jpg" height="100%" width="100%"/>
+				<img src="../media/images/header.jpg" height="100%" width="100%"/>
 			</div>
 			<table id="maintable" class="ui-content">
 				<tr>
@@ -30,17 +36,39 @@
 				</tr>
 				<tr>
 					<td >
-						<div class="icon"><a href="../main.html">Retour à l'accueil</a></div>
+						<div class="icon"><a href="../index.html">Retour à l'accueil</a></div>
 					</td>	
 				</tr>
 			</table>
 			
-			<div id="page_footer" data-role="footer" data-position="fixed"  >
-					<a ontouchstart="window.location='http://www.twitter.com/';" data-ajax="false"><img src="../common/css/icons/120x120_twitter.png" height="50%" width="auto"/></a>
-					<a ontouchstart="window.location='http://www.facebook.com/';" data-ajax="false"><img src="../common/css/icons/120x120_facebook.png" height="50%" width="auto"/></a>
-					<a  ontouchstart="window.location='https://plus.google.com/';" data-transition="slide"data-ajax="false"><img src="../common/css/icons/120x120_google.png" height="50%" width="auto"/></a>	
-					<a  ontouchstart="window.location='http://m.youtube.com/';" data-transition="slide"data-ajax="false"><img src="../common/css/icons/120x120_youtube.png" height="50%" width="auto"/></a>
-			</div>
+			<div id="page_footer" data-role="footer" >
+        		<table>
+					<tr>
+            			<td>
+              				<a ontouchstart="window.location='https://twitter.com/univ_auvergne';" >
+                				<img src="../media/icons/120x120_twitter.png" width="70%"/>
+              				</a>
+            			</td>
+	          			  <td>
+	              			<a ontouchstart="window.location='https://www.facebook.com/universite.dauvergne/';" >
+	                			<img src="../media/icons/120x120_facebook.png" width="70%"/>
+	              			</a>
+	            		</td>
+	            		<td>
+	              			<a ontouchstart="window.location='https://www.google.fr/#safe=off&amp;sclient=psy-ab&amp;q=univesite+d%27auvergne&amp;oq=univesite+d%27auvergne&amp;gs_l=hp.3..0i13l2j0i22i10i30j0i13i30.2450.6211.0.6336.20.20.0.0.0.0.179.1878.14j6.20.0....0...1c.1.19.psy-ab.picT6u6VT2U&amp;pbx=1&amp;bav=on.2,or.r_cp.r_qf.&amp;bvm=bv.48705608,d.d2k&amp;fp=6d417348eef7e23d&amp;biw=1920&amp;bih=977';" >
+	                			<img src="../media/icons/120x120_google.png" width="70%"/>
+	              			</a>
+	            		</td>
+	            		<td>
+	              			<a ontouchstart="window.location='http://www.youtube.com/user/UdAClermont1';" >
+	                			<img src="../media/icons/120x120_youtube.png" width="70%"/>
+	            	  		</a>
+	            		</td>
+          			</tr>
+        		</table>
+      		</div>
 		</div>
+		
+		<script type="text/javascript" src="../cordova.js"></script>
 	</body>
 </html>

@@ -38,12 +38,15 @@
     <preference name="android-installLocation" value="auto" />
     
 	<plugin name="Geolocation" value="CDVLocation" />
+	<plugin name="Geolocation" value="org.apache.cordova.GeoBroker" />
 	<plugin name="InAppBrowser" value="CDVInAppBrowser" />
+	<plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
 	<plugin name="InAppBrowser" />
 	<plugin name="Notification" value="CDVNotification" />
+	<plugin name="Notification" value="org.apache.cordova.Notification"/>
 	<plugin name="PushPlugin" value="com.plugin.gcm.PushPlugin" />
 	<plugin name="PushPlugin" value="PushPlugin" />
- 
+	
     <icon src="icon.png" />
     
     <gap:splash src="splash.png" />

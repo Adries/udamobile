@@ -2,18 +2,23 @@
 	<head>
 		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1,  maximum-scale=1"/> 
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-		<title>UdAMobile - Liste des diplômes</title>
-		<link rel="stylesheet" href="../css/ent.css" />
-		<link rel="stylesheet" href="../css/themes/udamobile.min.css" />
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile.structure-1.3.1.min.css" />
-		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+		
+		<title>Liste des diplômes</title>
+		
+		<link rel="stylesheet" type="text/css" href="../../media/jquery.mobile-1.3.2.min.css" />
+    	<link rel="stylesheet" type="text/css" href="../../media/udamobile.css" />
+		
+		<script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript">
 			$(document).bind('mobileinit', function(){
-				$.mobile.page.prototype.options.domCache = true;
 				$.mobile.allowCrossDomainPages = true;
+				$.mobile.page.prototype.options.domCache = true;
 			});
 		</script>
+		<script type="text/javascript" src="../../js/jquery.mobile-1.3.2.min.js"></script>
+    	<script type="text/javascript" src="../../js/zrssfeed.min.js"></script>
+    	<script type="text/javascript" src="../../js/msgBox.min.js"></script>    	
+    	<script type="text/javascript" src="../../js/udamobile.js"></script>
 		<script type="text/javascript" src="js/coordonnees.js"></script>
 		<style>
 			.clear {
@@ -21,22 +26,23 @@
 				clear: both;
 			}
 		</style>
-
-</head>	
-<body>
-	<div data-role="page" data-theme="a" >
-		<div id="uda_header" data-role="header" data-position="fixed"  >
-			<img src="../../common/css/themes/images/header.jpg" height="100%" width="100%"/>
+	</head>	
+	<body>
+		<div data-role="page" data-theme="a" >
+			<div id="uda_header" data-role="header" data-position="fixed"  >
+				<img src="../../media/images/header.jpg" height="100%" width="100%"/>
+			</div>
+			<div id="header2">
+				<div class="icon"><img src="../../media/icons/280x280_agenda.png"/></div>	
+			</div>
+			<div data-role="content"  data-theme="a" id="infos"></div>
+			<div id="uda_footer" data-role="footer" data-position="fixed">
+				<a href="../../coordonnees/coordonnees.html" data-ajax="false"><img src="../../media/icons/140x140_carte.png" height="50%" width="auto" /></a>
+				<a href="../../notes/notes.html" data-ajax="false"><img src="../../media/icons/140x140_actualites.png" height="50%" width="auto"/></a>
+				<a  href="../../index.html/#annuairePage" data-transition="slide"data-ajax="false"><img src="../../media/icons/140x140_annuaire.png" height="50%" width="auto"/></a>	
+			</div>	
 		</div>
-		<div id="header2">
-			<div class="icon"><img src="../../common/css/icons/280x280_agenda.png"/></div>	
-		</div>
-		<div data-role="content"  data-theme="a" id="infos"></div>
-		<div id="uda_footer" data-role="footer" data-position="fixed">
-				<a href="../../coordonnees/coordonnees.html" data-ajax="false"><img src="../../common/css/icons/140x140_carte.png" height="50%" width="auto" /></a>
-				<a href="../notes/notes.html" data-ajax="false"><img src="../../common/css/icons/140x140_actualites.png" height="50%" width="auto"/></a>
-				<a  href="../../annuaire/annuaire.html" data-transition="slide"data-ajax="false"><img src="../../common/css/icons/140x140_annuaire.png" height="50%" width="auto"/></a>	
-		</div>	
-	</div>	
-</body>
+		
+		<script type="text/javascript" src="../cordova.js"></script>
+	</body>
 </html>

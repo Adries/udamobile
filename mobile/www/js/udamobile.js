@@ -1,5 +1,5 @@
 var nbelt, i, m, jsonResto, lat, lon, mapOptions, map, address, end, distance, myMarker, nomRestaurant, jour, month, input, autocomplete, listAttribute,
-	typePage = '', a=3, counter = 0,
+	typePage, a, counter, saveList,
 	day = new Array([]),
 	latitude = new Array([]),
 	longitude = new Array([]);
@@ -106,6 +106,8 @@ function makelist_restaurant(json) {
  * @param lon
  */
 function make_fiche_Menu(nom,address,code,desc,lat,lon) {
+	$('#restaurantAddressText').hide();
+	$('#restaurantMapHolder').hide();
 	set_date_menu();
 	make_address_restaurant(nom,address,code,desc,lat,lon);
 	initialize_googlemap(lat, lon);
@@ -219,7 +221,7 @@ function make_menu_restaurant(json) {
  * initialize_actualite
  */
 function initialize_actualite() {
-	var saveList, listAffi, i;
+	var listAffi, i;
 	
 	typePage = 'actualite';
 	
@@ -286,6 +288,15 @@ function initialize_actualite() {
 	}
 }
 
+/**
+ * reload_actualite
+ */
+function reload_actualite() {
+	localStorage.clear();
+	saveList = false;
+	initialize_actualite();
+}
+
 
 /************************************************/
 /* ANNUAIRE										*/
@@ -326,9 +337,9 @@ function makelist_annuaire(json) {
 		else {
 			listelement = makelist.exact;			
 			for(i=0; i<n; i++) {
-				html+= '<li class=\"resultAnnuaire\"><h3>' + listelement[i].nom + ' ' + listelement[i].prenom + '</h3><img src=\"media/images/mail_green.png\">Courriel : <p><a href=\"mailto:' + listelement[i].mail + '\">' + listelement[i].mail + '</a></p>';
+				html+= '<li class=\"resultAnnuaire\"><h3>' + listelement[i].nom + ' ' + listelement[i].prenom + '</h3><img src=\"media/images/mail_green.png\"><span>Courriel : </span><p><a href=\"mailto:' + listelement[i].mail + '\">' + listelement[i].mail + '</a></p>';
 				if(listelement[i].tel) {
-					html+= '<img src=\"media/images/phone.png\">TEL :<a href=\"tel:' + listelement[i].tel + '\">' + listelement[i].tel + '</a>';
+					html+= '<img src=\"media/images/phone.png\"><span>TEL : </span><a href=\"tel:' + listelement[i].tel + '\">' + listelement[i].tel + '</a>';
 				}
 				html+='</li>';
 			}
@@ -391,6 +402,12 @@ function search_position_map() {
  */
 function initialize_listemap() {
 	typePage = 'listemap';
+	a = 3;
+	counter = 0;
+	
+	$('#listmapHeader').show();
+	$('#listBuilding').show();
+	$('#listIntoBuilding').hide();
 	$('#itineraireText').hide();
 	$('#listMapHolder').hide();
 	
@@ -543,6 +560,8 @@ function listBuildings_listemap(list){
 	
 	$('#listBuilding').hide();
 	$('#listIntoBuilding').show();
+	
+	$('#itineraireText').hide();
 	$('#listMapHolder').hide();
 	
 	a = 1;
@@ -698,8 +717,8 @@ function initialize_googlemap(latitude, longitude) {
 			google.maps.event.trigger(map,'resize');
 			break;
 		case 'listemap':
-			latitude[0]=latitude;
-			longitude[0]=longitude;
+			latitude[0] = latitude;
+			longitude[0] = longitude;
 			end = new google.maps.LatLng(latitude,longitude);
 			break;
 	}
