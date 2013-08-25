@@ -94,6 +94,14 @@ function make_address_restaurant(e, t, n, r, i, s) {
 	lon = s;
 	$("#restaurantAddress").html("<h4>Adresse : " + unescape(t) + ", " + n + ", " + r + "</h4>")
 }
+function show_itineraire_restaurant() {
+	if($("#restaurantAddressText").is(':visible')) {
+		$('#restaurantAddressText').hide();
+	}
+	else {
+		$('#restaurantAddressText').show();
+	}
+}
 function make_menu_restaurant(e) {
 	var t = "",
 		n, r, i, s, o;
@@ -587,9 +595,7 @@ function showPosition(e) {
 	address = new google.maps.LatLng(e.coords.latitude, e.coords.longitude);
 	switch (typePage) {
 	case "restaurant":
-
-
-		
+		$("#restaurantAddressText").empty();
 		t = new google.maps.DirectionsRenderer;
 		n = new google.maps.DirectionsService;
 		r = {
@@ -617,8 +623,7 @@ function showPosition(e) {
 		});
 		distance = google.maps.geometry.spherical.computeDistanceBetween(address, end);
 		
-		$("restaurantAddressTextt").hide()
-		$("#restaurantMapHolder").hide();;
+		$("#restaurantAddressText").hide();
 		break;
 	case "map":
 		mapOptions = {
@@ -638,6 +643,7 @@ function showPosition(e) {
 		$("#listmapHeader").hide();
 		$("#listBuilding").hide();
 		$("#listIntoBuilding").hide();
+		$("#itineraireText").empty();
 		$("#itineraireText").show();
 		$("#listMapHolder").show();
 		$("#backButton").attr("onclick", "back_to_category_listemap(" + a + ")");
