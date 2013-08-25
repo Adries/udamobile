@@ -1,36 +1,20 @@
 function initialize_menu() {
 	$(document).on("click", "#btnBack", function () {
-		$("#restaurantAddressText").html("");
-		jour = today.getDay();
-		numero = today.getDate()
+		$("#restaurantAddressText").empty();
 	});
 	$(document).on("swipeleft", "#btnNext", function () {
-		numero = numero + 1;
-		jour = jour + 1;
-		if (jour > 5) {
-			alert("Aucun accés au menu les week-end.");
-			jour = 1;
-			numero = numero + 2
-		}
+		day.setDate(day.getDate() + 1);
 		set_date_menu();
-		menu_restaurant(m)
+		menu_restaurant(m);
 	});
 	$(document).on("swiperight", "#btnLast", function () {
-		numero = numero - 1;
-		jour = jour - 1;
-		if (jour < 1) {
-			alert("Aucun accés au menu les week-end.");
-			numero = numero - 2;
-			jour = 5
-		}
+		day.setDate(day.getDate() - 1);
 		set_date_menu();
-		menu_restaurant(m)
+		menu_restaurant(m);
 	});
 	typePage = "restaurant";
+	day = new Date();
 	initialize_menu_alpha();
-	jour = today.getDay();
-	numero = today.getDate();
-	set_date_menu()
 }
 function initialize_menu_alpha() {
 	$.ajax({
@@ -67,7 +51,7 @@ function make_fiche_Menu(e, t, n, r, i, s) {
 function menu_restaurant(e) {
 	m = e;
 	$.ajax({
-		url: "http://udamobile.u-clermont1.fr/v2/restaurant/?menu=" + m + "&token=2a2a504c2d&date=" + day,
+		url: "http://udamobile.u-clermont1.fr/v2/restaurant/?menu=" + m + "&token=2a2a504c2d&date=" + dateCROUS,
 		type: "GET",
 		cache: true,
 		success: function (e) {
@@ -76,16 +60,16 @@ function menu_restaurant(e) {
 	})
 }
 function set_date_menu() {
-	month = today.getMonth();
 	TabJour = new Array("Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi");
-	TabMois = new Array("janvier", "février", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "décembre");
-	messageDate = TabJour[jour] + " " + numero + " " + TabMois[month];
+	TabMois = new Array("janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre");
+	
+	messageDate = TabJour[day.getDay()] + " " + day.getDate() + " " + TabMois[day.getMonth()];
 	$("#pdate").html(messageDate);
-	month = month + 1;
-	if (month > 9) {
-		day = today.getFullYear() + "-" + month + "-" + numero
-	} else {
-		day = today.getFullYear() + "-0" + month + "-" + numero
+	if (day.getMonth() > 9) {
+		dateCROUS = day.getFullYear() + "-" + day.getMonth() + "-" + day.getDate();
+	} 
+	else {
+		dateCROUS = day.getFullYear() + "-0" + day.getMonth() + "-" + day.getDate()
 	}
 }
 function make_address_restaurant(e, t, n, r, i, s) {
@@ -692,7 +676,6 @@ function showError(e) {
 		break
 	}
 }
-var nbelt, i, m, jsonResto, lat, lon, mapOptions, map, address, end, distance, myMarker, nomRestaurant, jour, month, input, autocomplete, listAttribute, typePage, a, counter, saveList, day = new Array([]),
+var nbelt, i, m, jsonResto, lat, lon, mapOptions, map, address, end, distance, myMarker, nomRestaurant, jour, month, input, autocomplete, listAttribute, typePage, a, counter, saveList, dateCROUS,
 	latitude = new Array([]),
 	longitude = new Array([]);
-today = new Date, numero = today.getDate()
